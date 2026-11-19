@@ -23,14 +23,13 @@ const D = { NR: 1, TIMI: 2, NAFN: 3, NETFANG: 4, PAKKAR: 5, UPPHAED: 6, TIL_FLOK
 const SJALFGEFNAR_STILLINGAR = [
   ['Pöntunarfrestur', new Date(Date.UTC(2026, 11, 1, 23, 59)), 'Síðasti pöntunardagur og tími'],
   ['Pantanir opnar', true, 'Taktu hakið af til að loka fyrir pantanir'],
-  ['Markmið (kr.)', 300000, 'Söfnunarmarkmið sem súlan á vefnum miðar við'],
   ['Verð pakka (kr.)', 1500, 'Söluverð með vsk.'],
   ['Kostnaður pakka (kr.)', 300, 'Framleiðslukostnaður með vsk.'],
   ['Reikningur', '0000-26-000000', 'Banki-hb-reikningsnúmer'],
   ['Kennitala', '000000-0000', 'Kennitala reikningseiganda'],
   ['Eigandi reiknings', '', 'Valfrjálst, t.d. „Þróttur – 5. fl. kvenna“'],
-  ['Afhending', 'Nánari upplýsingar um afhendingu koma í tölvupósti.', 'Birtist á vefnum og í staðfestingarpósti'],
-  ['Netfang tengiliðs', '', 'Birtist á vefnum og sem svarnetfang í pósti'],
+  ['Afhending', 'Miðarnir verða afhentir í byrjun desember.', 'Birtist á vefnum og í staðfestingarpósti'],
+  ['Netfang tengiliðs', 'elias@elias.is', 'Birtist á vefnum og sem svarnetfang í pósti'],
   ['Senda staðfestingarpóst', true, 'Sendir kaupanda greiðsluupplýsingar'],
   ['Slóð vefsins', '', 'Notað fyrir merkið í staðfestingarpósti']
 ];
@@ -61,12 +60,12 @@ function uppsetning() {
   if (s.getLastRow() < 2) {
     s.getRange(1, 1, 1, 3).setValues([['Stilling', 'Gildi', 'Skýring']])
       .setFontWeight('bold').setBackground('#0F3A2D').setFontColor('#FFFFFF');
-    s.getRange('B7:B8').setNumberFormat('@');
+    s.getRange('B6:B7').setNumberFormat('@');
     s.getRange(2, 1, SJALFGEFNAR_STILLINGAR.length, 3).setValues(SJALFGEFNAR_STILLINGAR);
     s.getRange(2, 2).setNumberFormat('d.m.yyyy HH:mm');
     s.getRange(3, 2).insertCheckboxes(); s.getRange(3, 2).setValue(true);
-    s.getRange(12, 2).insertCheckboxes(); s.getRange(12, 2).setValue(true);
-    s.getRange('B4:B6').setNumberFormat('#,##0');
+    s.getRange(11, 2).insertCheckboxes(); s.getRange(11, 2).setValue(true);
+    s.getRange('B4:B5').setNumberFormat('#,##0');
     s.setColumnWidth(1, 200); s.setColumnWidth(2, 260); s.setColumnWidth(3, 380);
     s.setFrozenRows(1);
   }
@@ -179,7 +178,6 @@ function stada_() {
     ok: true,
     pakkar: pakkar, greiddirPakkar: greiddir, pantanir: pantanir,
     safnad: pakkar * (verd - kostn), safnadGreitt: greiddir * (verd - kostn),
-    markmid: Number(st['Markmið (kr.)']) || 0,
     verd: verd, kostnadur: kostn,
     frestur: f instanceof Date ? f.toISOString() : null,
     opid: erOpid_(st),

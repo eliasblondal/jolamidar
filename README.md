@@ -12,7 +12,7 @@ Fjáröflunarsíða þar sem hægt er að panta pakka af jólamiðum sem stelpur
 ## Daglegur rekstur (í töflunni)
 
 - **Flipinn „Pantanir“**: ein lína á hverja pöntun. Hakaðu í **Greitt** þegar greiðsla berst og **Afhent** þegar pakkinn er afhentur. Hakaðu í **Hætt við** ef pöntun fellur niður (hún dettur þá út úr samtölunum).
-- **Flipinn „Stillingar“**: pöntunarfrestur, markmið, verð, reikningsnúmer, kennitala, afhendingartexti og netfang tengiliðs. Breytingar þar birtast á vefnum innan mínútu, án þess að snerta kóðann.
+- **Flipinn „Stillingar“**: pöntunarfrestur, verð, reikningsnúmer, kennitala, afhendingartexti og netfang tengiliðs. Breytingar þar birtast á vefnum innan mínútu, án þess að snerta kóðann.
 - Til að loka fyrir pantanir: taktu hakið af **Pantanir opnar**.
 
 ## Ef kóðanum í Apps Script er breytt

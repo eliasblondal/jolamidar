@@ -17,18 +17,18 @@ const BLAD_STILLINGAR = 'Stillingar';
 const TIMABELTI = 'Atlantic/Reykjavik';
 const MANUDIR = ['janúar', 'febrúar', 'mars', 'apríl', 'maí', 'júní', 'júlí', 'ágúst', 'september', 'október', 'nóvember', 'desember'];
 
-const DALKAR = ['Pöntunarnr.', 'Tími', 'Nafn', 'Netfang', 'Pakkar', 'Upphæð (kr.)', 'Til flokksins (kr.)', 'Greitt', 'Afhent', 'Hætt við', 'Athugasemd'];
-const D = { NR: 1, TIMI: 2, NAFN: 3, NETFANG: 4, PAKKAR: 5, UPPHAED: 6, TIL_FLOKKS: 7, GREITT: 8, AFHENT: 9, HAETT: 10, ATH: 11 };
+const DALKAR = ['Pöntunarnr.', 'Tími', 'Nafn', 'Iðkandi', 'Netfang', 'Pakkar', 'Upphæð (kr.)', 'Til flokksins (kr.)', 'Greitt', 'Afhent', 'Hætt við', 'Athugasemd'];
+const D = { NR: 1, TIMI: 2, NAFN: 3, IDKANDI: 4, NETFANG: 5, PAKKAR: 6, UPPHAED: 7, TIL_FLOKKS: 8, GREITT: 9, AFHENT: 10, HAETT: 11, ATH: 12 };
 
 const SJALFGEFNAR_STILLINGAR = [
-  ['Pöntunarfrestur', new Date(Date.UTC(2026, 11, 1, 23, 59)), 'Síðasti pöntunardagur og tími'],
+  ['Pöntunarfrestur', new Date(Date.UTC(2026, 10, 27, 23, 59)), 'Síðasti pöntunardagur og tími'],
   ['Pantanir opnar', true, 'Taktu hakið af til að loka fyrir pantanir'],
   ['Verð pakka (kr.)', 1500, 'Söluverð með vsk.'],
   ['Kostnaður pakka (kr.)', 300, 'Framleiðslukostnaður með vsk.'],
-  ['Reikningur', '0000-26-000000', 'Banki-hb-reikningsnúmer'],
-  ['Kennitala', '000000-0000', 'Kennitala reikningseiganda'],
+  ['Reikningur', '0133-26-201701', 'Banki-hb-reikningsnúmer'],
+  ['Kennitala', '520109-0210', 'Kennitala reikningseiganda'],
   ['Eigandi reiknings', '', 'Valfrjálst, t.d. „Þróttur – 5. fl. kvenna“'],
-  ['Afhending', 'Miðarnir verða afhentir í byrjun desember.', 'Birtist á vefnum og í staðfestingarpósti'],
+  ['Afhending', 'Áætluð afhending er 4. desember.', 'Birtist á vefnum og í staðfestingarpósti'],
   ['Netfang tengiliðs', 'elias@elias.is', 'Birtist á vefnum og sem svarnetfang í pósti'],
   ['Senda staðfestingarpóst', true, 'Sendir kaupanda greiðsluupplýsingar'],
   ['Slóð vefsins', '', 'Notað fyrir merkið í staðfestingarpósti']
@@ -51,9 +51,9 @@ function uppsetning() {
   p.setFrozenRows(1);
   p.getRange('A:A').setNumberFormat('@');
   p.getRange('B:B').setNumberFormat('d.m.yyyy HH:mm');
-  p.getRange('F:G').setNumberFormat('#,##0 "kr."');
-  p.setColumnWidths(1, 1, 100); p.setColumnWidth(2, 140); p.setColumnWidth(3, 200); p.setColumnWidth(4, 230);
-  p.setColumnWidths(5, 6, 110); p.setColumnWidth(11, 260);
+  p.getRange('G:H').setNumberFormat('#,##0 "kr."');
+  p.setColumnWidths(1, 1, 100); p.setColumnWidth(2, 140); p.setColumnWidth(3, 200); p.setColumnWidth(4, 180); p.setColumnWidth(5, 230);
+  p.setColumnWidths(6, 6, 110); p.setColumnWidth(12, 260);
 
   let s = ss.getSheetByName(BLAD_STILLINGAR);
   if (!s) s = ss.insertSheet(BLAD_STILLINGAR);
@@ -89,8 +89,10 @@ function doPost(e) {
 
     const nafn = String(d.nafn || '').trim().slice(0, 80);
     const netfang = String(d.netfang || '').trim().slice(0, 120);
+    const idkandi = String(d.idkandi || '').trim().slice(0, 80);
     const pakkar = Math.floor(Number(d.pakkar));
     if (nafn.length < 2) return json_({ ok: false, villa: 'Vantar nafn.' });
+    if (idkandi.length < 2) return json_({ ok: false, villa: 'Vantar nafn iðkanda.' });
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(netfang)) return json_({ ok: false, villa: 'Netfangið virðist ekki rétt.' });
     if (!(pakkar >= 1 && pakkar <= 50)) return json_({ ok: false, villa: 'Fjöldi pakka þarf að vera á bilinu 1–50.' });
 
@@ -106,7 +108,7 @@ function doPost(e) {
     const sh = tafla_().getSheetByName(BLAD_PANTANIR);
     const rod = sh.getLastRow() + 1;
     sh.getRange(rod, 1, 1, DALKAR.length).setValues([[
-      nr, new Date(), hreinsa_(nafn), hreinsa_(netfang), pakkar, upphaed, pakkar * (verd - kostn), false, false, false, ''
+      nr, new Date(), hreinsa_(nafn), hreinsa_(idkandi), hreinsa_(netfang), pakkar, upphaed, pakkar * (verd - kostn), false, false, false, ''
     ]]);
     sh.getRange(rod, D.GREITT, 1, 3).insertCheckboxes();
     SpreadsheetApp.flush();
@@ -114,7 +116,7 @@ function doPost(e) {
 
     const frestur = st['Pöntunarfrestur'] instanceof Date ? st['Pöntunarfrestur'] : null;
     const svar = {
-      ok: true, nr: nr, pakkar: pakkar, upphaed: upphaed,
+      ok: true, nr: nr, idkandi: idkandi, pakkar: pakkar, upphaed: upphaed,
       reikningur: String(st['Reikningur'] || ''), kennitala: String(st['Kennitala'] || ''),
       eigandi: String(st['Eigandi reiknings'] || ''),
       frestur: frestur ? frestur.toISOString() : null,
@@ -225,22 +227,24 @@ function sendaStadfestingu_(netfang, nafn, s, st) {
     '<div style="font-size:15px;margin-top:6px">5. flokkur kvenna · Þróttur</div><div style="clear:both"></div></div>' +
     '<div style="padding:24px">' +
     '<p style="font-size:18px;margin:0 0 6px"><b>Takk fyrir pöntunina, ' + esc_(fornafn) + '!</b></p>' +
-    '<p style="font-size:15px;margin:0 0 18px">Pöntun nr. <b>' + s.nr + '</b>: ' + pakkaOrd + ' (' + (s.pakkar * 10) + ' miðar).</p>' +
+    '<p style="font-size:15px;margin:0 0 4px">Pöntun nr. <b>' + s.nr + '</b>: ' + pakkaOrd + ' (' + (s.pakkar * 10) + ' miðar).</p>' +
+    '<p style="font-size:15px;margin:0 0 18px">Iðkandi: <b>' + esc_(s.idkandi) + '</b></p>' +
     '<div style="background:#1C1714;color:#FFFFFF;padding:10px 14px;border-radius:10px 10px 0 0;font-weight:700;font-size:15px">Millifærðu á reikning flokksins</div>' +
     '<table style="width:100%;border-collapse:collapse;border:2px solid #1C1714;border-top:0;border-radius:0 0 10px 10px"><tbody><tr><td style="padding:0 14px"><table style="width:100%;border-collapse:collapse">' +
     rod('Upphæð', kr_(s.upphaed)) + rod('Reikningur', s.reikningur) + rod('Kennitala', s.kennitala) +
-    (s.eigandi ? rod('Eigandi', s.eigandi) : '') + rod('Skýring', s.nr) +
+    (s.eigandi ? rod('Eigandi', s.eigandi) : '') +
     '</table></td></tr></tbody></table>' +
     '<div style="margin-top:18px;background:#FDECEA;border:2px solid #D4111A;border-radius:12px;padding:12px 14px;color:#7E0910;font-size:15px;line-height:1.45">' +
-    '<b>Miðarnir verða ekki framleiddir fyrr en greiðsla hefur borist.</b>' + (frestur ? ' Greiddu fyrir ' + frestur + ' svo pakkinn náist fyrir jól.' : '') + '</div>' +
-    (st['Afhending'] ? '<p style="font-size:15px;margin:18px 0 0"><b>Afhending:</b> ' + esc_(st['Afhending']) + '</p>' : '') +
+    '<b>Miðarnir verða ekki framleiddir fyrr en greiðsla hefur borist.</b>' + (frestur ? ' Greiddu fyrir ' + frestur + '.' : '') + '</div>' +
+    (st['Afhending'] ? '<p style="font-size:15px;margin:18px 0 0">' + esc_(st['Afhending']) + '</p>' : '') +
     '<p style="font-size:15px;margin:18px 0 0">Takk fyrir að styrkja stelpurnar!</p>' +
     (tengilidur ? '<p style="font-size:14px;margin:12px 0 0">Spurningar? Svaraðu þessum pósti eða skrifaðu á ' + esc_(tengilidur) + '.</p>' : '') +
     '</div></div></div>';
 
-  const texti = 'Takk fyrir pöntunina, ' + fornafn + '!\n\nPöntun nr. ' + s.nr + ': ' + pakkaOrd + '.\n\n' +
-    'Millifærðu ' + kr_(s.upphaed) + ' á reikning ' + s.reikningur + ', kt. ' + s.kennitala + ', skýring: ' + s.nr + '.\n\n' +
-    'Miðarnir verða ekki framleiddir fyrr en greiðsla hefur borist.' + (frestur ? ' Greiddu fyrir ' + frestur + '.' : '') + '\n\nTakk fyrir að styrkja stelpurnar!';
+  const texti = 'Takk fyrir pöntunina, ' + fornafn + '!\n\nPöntun nr. ' + s.nr + ': ' + pakkaOrd + '. Iðkandi: ' + s.idkandi + '.\n\n' +
+    'Millifærðu ' + kr_(s.upphaed) + ' á reikning ' + s.reikningur + ', kt. ' + s.kennitala + '.\n\n' +
+    'Miðarnir verða ekki framleiddir fyrr en greiðsla hefur borist.' + (frestur ? ' Greiddu fyrir ' + frestur + '.' : '') +
+    (st['Afhending'] ? '\n\n' + st['Afhending'] : '') + '\n\nTakk fyrir að styrkja stelpurnar!';
 
   const opt = { htmlBody: html, name: 'Jólamiðar 5. flokks Þróttar' };
   if (tengilidur) opt.replyTo = tengilidur;
@@ -256,4 +260,29 @@ function hreinsaPrufur() {
     if (String(sh.getRange(r, D.NAFN).getValue()).toUpperCase().indexOf('PRUFA') === 0) sh.deleteRow(r);
   }
   PropertiesService.getScriptProperties().deleteProperty('naestaNr');
+}
+
+/* ================= Uppfærsla 19. nóv. (keyrð einu sinni) ================= */
+
+// Bætir dálkinum „Iðkandi“ við pöntunartöfluna og setur inn frest, bankaupplýsingar og afhendingu
+function uppfaersla2() {
+  const p = tafla_().getSheetByName(BLAD_PANTANIR);
+  if (p.getRange(1, D.IDKANDI).getValue() !== 'Iðkandi') {
+    p.insertColumnAfter(D.NAFN);
+    p.getRange(1, D.IDKANDI).setValue('Iðkandi').setFontWeight('bold').setBackground('#D4111A').setFontColor('#FFFFFF');
+    p.setColumnWidth(D.IDKANDI, 180);
+  }
+  setjaStillingu_('Pöntunarfrestur', new Date(Date.UTC(2026, 10, 27, 23, 59)));
+  setjaStillingu_('Reikningur', '0133-26-201701');
+  setjaStillingu_('Kennitala', '520109-0210');
+  setjaStillingu_('Afhending', 'Áætluð afhending er 4. desember.');
+}
+
+function setjaStillingu_(lykill, gildi) {
+  const s = tafla_().getSheetByName(BLAD_STILLINGAR);
+  const keys = s.getRange(2, 1, s.getLastRow() - 1, 1).getValues();
+  for (let i = 0; i < keys.length; i++) {
+    if (String(keys[i][0]).trim() === lykill) { s.getRange(i + 2, 2).setValue(gildi); return; }
+  }
+  s.appendRow([lykill, gildi, '']);
 }

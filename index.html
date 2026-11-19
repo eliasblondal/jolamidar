@@ -321,26 +321,27 @@ footer{background:var(--green);color:var(--paper)}
     <div class="order-info">
       <div class="eyebrow">Pöntun</div>
       <h2 class="cond" id="panta-h">Pantaðu pakka</h2>
-      <p>Fylltu út formið og þú færð greiðsluupplýsingar strax. Pöntunin fer í framleiðslu þegar greiðsla hefur borist.</p>
+      <p>Fylltu út formið og þú færð greiðsluupplýsingar strax.</p>
       <ol class="steps">
         <li><span class="n">1</span><div><b>Þú pantar</b><span>Nafn, netfang og fjöldi pakka.</span></div></li>
         <li><span class="n">2</span><div><b>Þú millifærir</b><span>Upphæð og reikningsnúmer birtast um leið og þú smellir á Panta.</span></div></li>
-        <li><span class="n">3</span><div><b>Við prentum og pökkum</b><span>Pakkinn fer í framleiðslu þegar greiðslan er komin.</span></div></li>
-        <li><span class="n g"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="1.5"/><path d="M12 8v13M3 12h18M12 8c-2-4-6-4-6-1.5S9 8 12 8zm0 0c2-4 6-4 6-1.5S15 8 12 8z"/></svg></span><div><b>Afhent fyrir jól</b><span id="afhending">Miðarnir verða afhentir í byrjun desember.</span></div></li>
+        <li><span class="n">3</span><div><b>Við prentum og pökkum</b><span>Miðarnir fara í prentun þegar pöntunartímabili er lokið þann <span data-frestur>27. nóvember</span> næstkomandi.</span></div></li>
+        <li><span class="n g"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="1.5"/><path d="M12 8v13M3 12h18M12 8c-2-4-6-4-6-1.5S9 8 12 8zm0 0c2-4 6-4 6-1.5S15 8 12 8z"/></svg></span><div><b>Afhent fyrir jól</b><span id="afhending">Áætluð afhending er 4. desember.</span></div></li>
       </ol>
     </div>
 
     <div class="panel">
       <!-- Pöntunarform -->
       <form id="form" novalidate>
-        <div class="panel-head">
-          <h3 class="cond">Skráning</h3>
-          <span class="hand-red" style="font-size:26px;transform:rotate(-3deg)">tekur 30 sek.</span>
-        </div>
         <div class="field">
           <label for="nafn">Nafn</label>
           <input id="nafn" name="nafn" type="text" autocomplete="name" placeholder="Fullt nafn" maxlength="80" required aria-describedby="nafn-err">
           <span class="err" id="nafn-err" hidden>Skrifaðu nafnið þitt.</span>
+        </div>
+        <div class="field">
+          <label for="idkandi">Nafn iðkanda</label>
+          <input id="idkandi" name="idkandi" type="text" autocomplete="off" placeholder="Stelpan í 5. flokki sem þú styrkir" maxlength="80" required aria-describedby="idkandi-err">
+          <span class="err" id="idkandi-err" hidden>Skrifaðu nafn iðkanda.</span>
         </div>
         <div class="field">
           <label for="netfang">Netfang</label>
@@ -370,7 +371,7 @@ footer{background:var(--green);color:var(--paper)}
           <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </button>
         <p class="alert" id="villa" role="alert" hidden></p>
-        <p class="fine">Þú færð greiðsluupplýsingar á næsta skjá og í tölvupósti. Netfangið er eingöngu notað vegna pöntunarinnar.</p>
+        <p class="fine">Þú færð greiðsluupplýsingar á næsta skjá og í tölvupósti.</p>
       </form>
 
       <!-- Kvittun eftir pöntun -->
@@ -380,6 +381,7 @@ footer{background:var(--green);color:var(--paper)}
           <div>
             <h3 class="cond" id="k-takk">Takk!</h3>
             <div style="margin-top:6px;font-size:17px">Pöntun nr. <strong id="k-nr">–</strong> er skráð: <span id="k-pakkar">–</span>.</div>
+            <div style="margin-top:2px;font-size:17px">Iðkandi: <strong id="k-idkandi">–</strong></div>
           </div>
         </div>
         <div class="pay">
@@ -389,13 +391,13 @@ footer{background:var(--green);color:var(--paper)}
             <div class="pay-row"><span class="k">Reikningur</span><span class="v"><span class="num" id="k-reikningur">–</span><button type="button" class="copy" data-copy="k-reikningur" aria-label="Afrita reikningsnúmer">Afrita</button></span></div>
             <div class="pay-row"><span class="k">Kennitala</span><span class="v"><span class="num" id="k-kennitala">–</span><button type="button" class="copy" data-copy="k-kennitala" aria-label="Afrita kennitölu">Afrita</button></span></div>
             <div class="pay-row" id="k-eigandi-row" hidden><span class="k">Eigandi</span><span class="v"><span id="k-eigandi">–</span></span></div>
-            <div class="pay-row"><span class="k">Skýring</span><span class="v"><span class="num" id="k-skyring">–</span><button type="button" class="copy" data-copy="k-skyring" aria-label="Afrita skýringu">Afrita</button></span></div>
           </div>
         </div>
         <div class="alert">
           <svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 7.5v5.5M12 16.5h.01"/></svg>
-          <div><strong>Miðarnir verða ekki framleiddir fyrr en greiðsla hefur borist.</strong> <span id="k-greida-fyrir">Greiddu sem fyrst svo pakkinn náist fyrir jól.</span></div>
+          <div><strong>Miðarnir verða ekki framleiddir fyrr en greiðsla hefur borist.</strong> <span id="k-greida-fyrir">Greiddu sem fyrst.</span></div>
         </div>
+        <p class="fine" id="k-afhending" style="font-size:16px">Áætluð afhending er 4. desember.</p>
         <p class="fine" id="k-post" style="font-size:16px">Við sendum þessar upplýsingar líka í tölvupósti.</p>
         <button type="button" class="btn btn-line" id="ny" style="justify-self:start">Gera aðra pöntun</button>
       </div>
@@ -432,13 +434,13 @@ footer{background:var(--green);color:var(--paper)}
    ========================================================= */
 const CONFIG = {
   scriptUrl: 'https://script.google.com/macros/s/AKfycbycM_bYLIcWdniG55H97TgQsOqI0wH0--epkIasztskuAXN5XOqpD8lBnsGqbAseEUQ/exec',
-  frestur: '2026-12-01T23:59:00',
+  frestur: '2026-11-27T23:59:00',
   verd: 1500,
   kostnadur: 300,
-  reikningur: '0000-26-000000',
-  kennitala: '000000-0000',
+  reikningur: '0133-26-201701',
+  kennitala: '520109-0210',
   eigandi: '',
-  afhending: 'Miðarnir verða afhentir í byrjun desember.',
+  afhending: 'Áætluð afhending er 4. desember.',
   tengilidur: 'elias@elias.is',
   opid: true,
   demoPakkar: 0
@@ -490,6 +492,7 @@ function opid() { const d = frestur(); return S.opid !== false && (!d || d.getTi
 function renderCountdown() {
   const d = frestur();
   $('frestur-dags').textContent = dagsetning(d);
+  document.querySelectorAll('[data-frestur]').forEach((el) => { el.textContent = dagsetning(d); });
   const el = $('countdown');
   if (!opid()) { el.innerHTML = '<strong>Lokað</strong>'; $('frestur-label').textContent = 'Pöntunarfrestur'; return; }
   if (!d) { el.innerHTML = '<strong>–</strong>'; return; }
@@ -552,17 +555,21 @@ $('form').addEventListener('submit', async (e) => {
   e.preventDefault();
   const nafn = $('nafn').value.trim();
   const netfang = $('netfang').value.trim();
+  const idkandi = $('idkandi').value.trim();
   const nafnOk = nafn.length >= 2;
+  const idkandiOk = idkandi.length >= 2;
   const netfangOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(netfang);
   synaVillu('nafn', !nafnOk);
   synaVillu('netfang', !netfangOk);
+  synaVillu('idkandi', !idkandiOk);
   if (!nafnOk) { $('nafn').focus(); return; }
+  if (!idkandiOk) { $('idkandi').focus(); return; }
   if (!netfangOk) { $('netfang').focus(); return; }
 
   const btn = $('submit');
   btn.disabled = true; $('submit-text').textContent = 'Skrái pöntun…';
   $('villa').hidden = true;
-  const gogn = { nafn, netfang, pakkar, vefsida: $('vefsida').value };
+  const gogn = { nafn, idkandi, netfang, pakkar, vefsida: $('vefsida').value };
 
   try {
     let svar;
@@ -571,10 +578,10 @@ $('form').addEventListener('submit', async (e) => {
       svar = await r.json();
     } else {
       // Sýniútgáfa: ekkert vistað
-      svar = { ok: true, nr: '0000', pakkar, upphaed: pakkar * S.verd, reikningur: S.reikningur, kennitala: S.kennitala, eigandi: S.eigandi, frestur: S.frestur, postur: false };
+      svar = { ok: true, nr: '0000', idkandi, pakkar, upphaed: pakkar * S.verd, reikningur: S.reikningur, kennitala: S.kennitala, eigandi: S.eigandi, frestur: S.frestur, postur: false };
     }
     if (!svar || !svar.ok) throw new Error((svar && svar.villa) || 'villa');
-    synaKvittun(svar, nafn, netfang);
+    synaKvittun(svar, nafn, netfang, idkandi);
     stats.pakkar = (Number(stats.pakkar) || 0) + pakkar;
     renderStats();
     setTimeout(hladaStodu, 1500);
@@ -587,7 +594,7 @@ $('form').addEventListener('submit', async (e) => {
   }
 });
 
-function synaKvittun(s, nafn, netfang) {
+function synaKvittun(s, nafn, netfang, idkandi) {
   const fornafn = nafn.split(/\s+/)[0];
   $('k-takk').textContent = 'Takk, ' + fornafn + '!';
   $('k-nr').textContent = s.nr;
@@ -595,10 +602,11 @@ function synaKvittun(s, nafn, netfang) {
   $('k-upphaed').textContent = fmt(s.upphaed) + ' kr.';
   $('k-reikningur').textContent = s.reikningur || S.reikningur;
   $('k-kennitala').textContent = s.kennitala || S.kennitala;
-  $('k-skyring').textContent = s.nr;
+  $('k-idkandi').textContent = s.idkandi || idkandi;
   if (s.eigandi) { $('k-eigandi').textContent = s.eigandi; $('k-eigandi-row').hidden = false; }
   const d = new Date(s.frestur || S.frestur);
-  if (!isNaN(d)) $('k-greida-fyrir').textContent = 'Greiddu fyrir ' + dagsetning(d) + ' svo pakkinn náist fyrir jól.';
+  if (!isNaN(d)) $('k-greida-fyrir').textContent = 'Greiddu fyrir ' + dagsetning(d) + '.';
+  $('k-afhending').textContent = S.afhending || '';
   $('k-post').innerHTML = s.postur === false ? 'Taktu skjáskot af þessum upplýsingum.' : 'Við sendum þessar upplýsingar líka á <strong></strong>.';
   const strong = $('k-post').querySelector('strong'); if (strong) strong.textContent = netfang;
   $('form').hidden = true;

@@ -70,13 +70,13 @@ h1{margin:22px 0 0;font-size:clamp(78px,12vw,178px);line-height:.84;font-weight:
 .collage{flex:1 1 420px;min-width:0;max-width:580px;position:relative;aspect-ratio:1/.95}
 .card{position:absolute;container-type:inline-size;filter:drop-shadow(0 12px 14px rgba(70,0,0,.38))}
 .card img,.paper img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover}
-/* miðinn sjálfur, með gati fyrir jólapakkasnæri efst í vinstra horni */
+/* miðinn sjálfur, með gati fyrir jólapakkasnæri efst í hægra horni */
 .paper{position:relative;background:#fff;padding:5px;border-radius:3px;
-  -webkit-mask:radial-gradient(circle at 12.5% 12.5%,transparent 0 4.3cqw,#000 calc(4.3cqw + .6px));
-  mask:radial-gradient(circle at 12.5% 12.5%,transparent 0 4.3cqw,#000 calc(4.3cqw + .6px))}
-.paper::after{content:"";position:absolute;left:12.5%;top:12.5%;width:13cqw;height:13cqw;transform:translate(-50%,-50%);border-radius:50%;
+  -webkit-mask:radial-gradient(circle at 87.5% 12.5%,transparent 0 4.3cqw,#000 calc(4.3cqw + .6px));
+  mask:radial-gradient(circle at 87.5% 12.5%,transparent 0 4.3cqw,#000 calc(4.3cqw + .6px))}
+.paper::after{content:"";position:absolute;left:87.5%;top:12.5%;width:13cqw;height:13cqw;transform:translate(-50%,-50%);border-radius:50%;
   background:radial-gradient(circle,transparent 0 4.3cqw,rgba(0,0,0,.28) calc(4.3cqw + .2px) calc(4.3cqw + 1.2px),#fff calc(4.3cqw + 1.4px) 6cqw,rgba(0,0,0,.16) calc(6cqw + .2px) calc(6cqw + 1px),transparent calc(6cqw + 1.4px))}
-.twine{position:absolute;left:-34%;top:-44%;width:62%;height:62%;overflow:visible;pointer-events:none;z-index:4}
+.twine{position:absolute;right:-34%;top:-44%;width:62%;height:62%;transform:scaleX(-1);overflow:visible;pointer-events:none;z-index:4}
 .twine path{fill:none;stroke-width:2.4;stroke-linecap:round}
 .twine .w{stroke:#fff}.twine .r{stroke:#D4111A;stroke-dasharray:3.2 3.2}
 .tape{position:absolute;top:-12px;left:30%;width:40%;height:24px;background:rgba(255,246,225,.8)}
@@ -253,11 +253,11 @@ footer{background:var(--green);color:var(--paper)}
 
       <div class="collage" aria-hidden="true">
         <div class="card" style="left:2%;top:4%;width:38%;transform:rotate(-9deg)"><div class="paper"><img src="assets/midar/midi-13.webp" alt=""></div><svg class="twine" viewBox="0 0 100 100" aria-hidden="true"><path class="w" d="M75 91C62 56 34 40 6 12"/><path class="r" d="M75 91C62 56 34 40 6 12"/><path class="w" d="M75 91C84 54 56 24 30 2"/><path class="r" d="M75 91C84 54 56 24 30 2"/></svg><span class="tape" style="transform:rotate(-4deg)"></span></div>
-        <div class="card" style="left:50%;top:0;width:36%;transform:rotate(7deg)"><div class="paper"><img src="assets/midar/midi-07.webp" alt=""></div><span class="tape" style="transform:rotate(5deg)"></span></div>
-        <div class="card" style="left:0;top:52%;width:34%;transform:rotate(6deg)"><div class="paper"><img src="assets/midar/midi-19.webp" alt=""></div><svg class="twine" viewBox="0 0 100 100" aria-hidden="true"><path class="w" d="M75 91C62 56 34 40 6 12"/><path class="r" d="M75 91C62 56 34 40 6 12"/><path class="w" d="M75 91C84 54 56 24 30 2"/><path class="r" d="M75 91C84 54 56 24 30 2"/></svg></div>
+        <div class="card" style="left:50%;top:0;width:36%;transform:rotate(7deg)"><div class="paper"><img src="assets/midar/midi-07.webp" alt=""></div><svg class="twine" viewBox="0 0 100 100" aria-hidden="true"><path class="w" d="M75 91C62 56 34 40 6 12"/><path class="r" d="M75 91C62 56 34 40 6 12"/><path class="w" d="M75 91C84 54 56 24 30 2"/><path class="r" d="M75 91C84 54 56 24 30 2"/></svg><span class="tape" style="transform:rotate(5deg)"></span></div>
+        <div class="card" style="left:0;top:52%;width:34%;transform:rotate(6deg)"><div class="paper"><img src="assets/midar/midi-19.webp" alt=""></div></div>
         <div class="card" style="left:64%;top:42%;width:34%;transform:rotate(10deg)"><div class="paper"><img src="assets/midar/midi-10.webp" alt=""></div></div>
         <div class="card" style="left:40%;top:64%;width:32%;transform:rotate(-5deg)"><div class="paper"><img src="assets/midar/midi-02.webp" alt=""></div></div>
-        <div class="card" style="left:27%;top:27%;width:42%;transform:rotate(-2deg);filter:drop-shadow(0 18px 20px rgba(70,0,0,.45))"><div class="paper"><img src="assets/midar/midi-05.webp" alt=""></div><svg class="twine" viewBox="0 0 100 100" aria-hidden="true"><path class="w" d="M75 91C62 56 34 40 6 12"/><path class="r" d="M75 91C62 56 34 40 6 12"/><path class="w" d="M75 91C84 54 56 24 30 2"/><path class="r" d="M75 91C84 54 56 24 30 2"/></svg><span class="tape" style="width:44%;left:28%;transform:rotate(-2deg)"></span></div>
+        <div class="card" style="left:27%;top:27%;width:42%;transform:rotate(-2deg);filter:drop-shadow(0 18px 20px rgba(70,0,0,.45))"><div class="paper"><img src="assets/midar/midi-05.webp" alt=""></div><span class="tape" style="width:44%;left:28%;transform:rotate(-2deg)"></span></div>
         <div class="collage-note">
           <svg width="54" height="48" viewBox="0 0 54 48" fill="none" stroke="#FFF1D6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M50 40C38 42 22 36 14 14"/><path d="M6 20l8-8 6 10"/></svg>
           <span>35 ólíkar teikningar!</span>
@@ -415,10 +415,6 @@ footer{background:var(--green);color:var(--paper)}
   <div class="wrap foot">
     <div class="foot-brand">
       <img src="assets/merki.png" alt="Merki Þróttar" width="445" height="559">
-      <div>
-        <div class="foot-hand">Takk fyrir að styrkja stelpurnar!</div>
-        <p>Ágóðinn rennur óskiptur til 5. flokks kvenna í Þrótti.</p>
-      </div>
     </div>
     <div class="foot-contact">
       <div id="tengilidur" hidden><b>Spurningar um pöntun?</b><br><a id="tengilidur-a" href="#"></a></div>

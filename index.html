@@ -355,7 +355,6 @@ footer{background:var(--green);color:var(--paper)}
           <div class="row"><span id="sum-line">1 × 1.500 kr.</span><span class="num" id="sum-a">1.500 kr.</span></div>
           <hr>
           <div class="row total"><span>Samtals</span><strong class="cond num" id="sum-total">1.500 kr.</strong></div>
-          <div class="row team"><span>Þar af til 5. flokks</span><span class="num" id="sum-team">1.200 kr.</span></div>
         </div>
         <p class="fine" style="margin-top:-10px;color:var(--green-text);font-weight:700">Allur ágóði rennur til 5. flokks kvenna.</p>
         <button class="btn btn-red cond" type="submit" id="submit">
@@ -523,7 +522,6 @@ function renderSummary() {
   $('sum-line').textContent = pakkar + ' × ' + fmt(S.verd) + ' kr.';
   $('sum-a').textContent = fmt(pakkar * S.verd) + ' kr.';
   $('sum-total').textContent = fmt(pakkar * S.verd) + ' kr.';
-  $('sum-team').textContent = fmt(pakkar * (S.verd - S.kostnadur)) + ' kr.';
   $('minus').disabled = pakkar <= 1;
   $('plus').disabled = pakkar >= 50;
 }

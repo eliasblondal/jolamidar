@@ -1,3 +1,4 @@
+/** @OnlyCurrentDoc */
 /**
  * Jólamiðar 5. flokks kvenna – Þróttur
  * ------------------------------------

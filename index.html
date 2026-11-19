@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="is">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jólamiðar · 5. flokkur kvenna · Þróttur</title>
+<meta name="description" content="Merkimiðar á jólapakkana teiknaðir af stelpunum í 5. flokki kvenna í Þrótti. 10 miðar í pakka á 1.500 kr. Allur ágóði rennur til flokksins.">
+<meta property="og:title" content="Jólamiðar 5. flokks kvenna · Þróttur">
+<meta property="og:description" content="Merkimiðar á jólapakkana teiknaðir af stelpunum sjálfum. 10 miðar í pakka á 1.500 kr. Styrktu stelpurnar!">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#D4111A">
+<link rel="icon" type="image/png" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Caveat:wght@500..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#D4111A; --red-2:#C50F18; --red-text:#B00D16; --red-dark:#7E0910;
+  --ink:#1C1714; --green:#0F3A2D; --green-text:#0B5B3C; --mint:#D5E6DB;
+  --cream:#FFFBF5; --kraft:#F4EEE3; --paper:#FFF6E0; --gold:#F2C14E; --line:#D9CCB8;
+  --display:'Bricolage Grotesque',system-ui,sans-serif; --hand:Caveat,cursive;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--display);font-optical-sizing:auto;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+a{color:var(--red-text)}a:hover{color:var(--red-dark)}
+.wrap{max-width:1240px;margin:0 auto;padding-left:32px;padding-right:32px}
+.cond{font-variation-settings:'wdth' 75}
+.num{font-variant-numeric:tabular-nums}
+.eyebrow{font-size:15px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--red-text)}
+.stripe{height:14px;background:repeating-linear-gradient(-45deg,#fff 0 12px,var(--red) 12px 24px)}
+.stripe.rev{background:repeating-linear-gradient(-45deg,var(--red) 0 12px,#fff 12px 24px)}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 28px;border-radius:999px;font:inherit;font-weight:800;font-size:19px;text-decoration:none;cursor:pointer;border:0;transition:transform .15s ease,box-shadow .15s ease,background-color .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn:disabled{opacity:.7;cursor:wait;transform:none}
+button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;color:#fff;background-color:var(--red);
+  background-image:radial-gradient(rgba(255,255,255,.16) 1.6px,transparent 2.2px),radial-gradient(rgba(255,255,255,.10) 1.2px,transparent 1.8px),repeating-linear-gradient(90deg,var(--red) 0 72px,var(--red-2) 72px 144px);
+  background-size:52px 52px,52px 52px,auto;background-position:0 0,26px 26px,0 0}
+.hero-inner{padding-top:26px;padding-bottom:168px}
+.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:14px;color:#fff;text-decoration:none}
+.brand img{height:80px;width:auto;filter:drop-shadow(0 6px 10px rgba(80,0,0,.35))}
+.brand b{display:block;font-size:18px;font-weight:800}
+.brand span{font-size:15px;font-weight:500}
+.btn-white{background:#fff;color:var(--red-text);box-shadow:0 8px 22px rgba(80,0,0,.25)}
+.btn-white:hover{color:var(--red-dark)}
+.btn-ghost{border:2px solid #fff;color:#fff;background:transparent}
+.btn-ghost:hover{color:#fff;background:rgba(255,255,255,.1)}
+.top .btn{min-height:48px;padding:0 22px;font-size:17px}
+.hero-grid{display:flex;flex-wrap:wrap;align-items:center;gap:56px;margin-top:52px}
+.hero-text{flex:1 1 460px;min-width:0}
+.chip{display:inline-block;background:#fff;color:var(--red-text);font-weight:800;font-size:14px;letter-spacing:.1em;text-transform:uppercase;padding:8px 14px;border-radius:999px}
+h1{margin:22px 0 0;font-size:clamp(78px,12vw,178px);line-height:.84;font-weight:800;letter-spacing:-.02em}
+.hand-sub{margin:14px 0 0;font-family:var(--hand);font-size:clamp(32px,3.4vw,48px);font-weight:700;line-height:1;color:#FFF1D6;transform:rotate(-2deg);transform-origin:left center}
+.lede{margin:28px 0 0;max-width:540px;font-size:20px;line-height:1.5;font-weight:500}
+.price-row{display:flex;flex-wrap:wrap;align-items:center;gap:18px 28px;margin-top:34px}
+.price{display:flex;align-items:baseline;gap:10px}
+.price strong{font-size:56px;line-height:1;font-weight:800}
+.price span{font-size:17px;font-weight:600}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.collage{flex:1 1 420px;min-width:0;max-width:580px;position:relative;aspect-ratio:1/.95}
+.card{position:absolute;background:#fff;padding:5px;border-radius:3px;box-shadow:0 14px 30px rgba(70,0,0,.38)}
+.card img{display:block;width:100%;aspect-ratio:1;object-fit:cover}
+.tape{position:absolute;top:-12px;left:30%;width:40%;height:24px;background:rgba(255,246,225,.8)}
+.collage-note{position:absolute;right:-2%;bottom:-4%;display:flex;align-items:flex-end;gap:6px;transform:rotate(-4deg);font-family:var(--hand);font-size:32px;font-weight:700;color:#FFF1D6;line-height:1}
+
+/* ---------- staðan ---------- */
+.kraft{background:var(--kraft)}
+.stada{position:relative;z-index:2;transform:translateY(-112px);margin-bottom:-112px}
+.board{background:var(--green);color:var(--paper);border-radius:24px;padding:26px 28px 28px;box-shadow:0 26px 60px rgba(15,58,45,.35)}
+.board-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 24px}
+.board h2{margin:0;display:flex;align-items:center;gap:10px;font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:800}
+.live{width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(242,193,78,.25);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(242,193,78,.08)}}
+.muted{color:var(--mint)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:18px}
+.tile{background:rgba(255,246,224,.06);border:1px solid rgba(255,246,224,.14);border-radius:18px;padding:20px 22px}
+.tile-label{font-size:16px;font-weight:600;color:var(--mint)}
+.big{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px;margin-top:6px}
+.big strong{font-size:76px;line-height:.95;font-weight:800}
+.big span{font-size:26px;font-weight:700}
+.tile-foot{margin-top:10px;font-size:16px}
+.bar{margin-top:14px;height:12px;border-radius:999px;background:rgba(255,246,224,.16);overflow:hidden}
+.bar i{display:block;height:100%;width:0;border-radius:999px;background:repeating-linear-gradient(-45deg,var(--gold) 0 10px,#F7D37E 10px 20px);transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.board-note{margin:16px 0 0;font-size:15px;color:var(--mint)}
+
+/* ---------- miðar ---------- */
+.gallery{padding-top:96px;padding-bottom:110px}
+.sec-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px 48px}
+.sec-head>div:first-child{flex:1 1 520px;min-width:0}
+.sec-head>div:last-child{flex:1 1 360px;min-width:0;max-width:480px}
+h2.title{margin:10px 0 0;font-size:clamp(44px,5.6vw,76px);line-height:.95;font-weight:800;letter-spacing:-.01em}
+.sec-head p{margin:0;font-size:19px;line-height:1.5}
+.hand-red{font-family:var(--hand);font-size:34px;font-weight:700;color:var(--red-text);transform:rotate(-2deg);display:inline-block}
+.draw-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin-top:14px}
+.btn-ink{background:var(--ink);color:#fff;min-height:52px;font-size:17px;padding:0 22px}
+.btn-ink:hover{color:#fff}
+.btn-line{background:#fff;color:var(--ink);border:2px solid var(--ink);min-height:52px;font-size:17px;padding:0 22px}
+.btn-line:hover{color:var(--ink)}
+.grid{margin-top:44px;display:grid;grid-template-columns:repeat(auto-fill,minmax(136px,1fr));gap:24px 22px}
+.midi{position:relative;margin:0;background:#fff;padding:6px;border-radius:4px;box-shadow:0 6px 16px rgba(28,23,20,.16);transform:rotate(var(--r));transition:transform .25s ease,box-shadow .25s ease,opacity .3s ease,filter .3s ease}
+.midi img{display:block;width:100%;aspect-ratio:1;object-fit:cover}
+.midi:hover{transform:rotate(0) scale(1.07);box-shadow:0 18px 36px rgba(28,23,20,.28);z-index:2}
+.grid.drawn .midi{opacity:.22;filter:grayscale(.7)}
+.grid.drawn .midi.pick{opacity:1;filter:none;transform:rotate(0) scale(1.06);box-shadow:0 0 0 4px var(--red),0 16px 30px rgba(28,23,20,.25);z-index:2}
+
+/* ---------- pöntun ---------- */
+.order{padding-top:96px;padding-bottom:110px;display:flex;flex-wrap:wrap;gap:48px 64px;align-items:flex-start}
+.order-info{flex:1 1 380px;min-width:0}
+.order-info h2{margin:10px 0 0;font-size:clamp(48px,6vw,84px);line-height:.92;font-weight:800}
+.order-info>p{margin:18px 0 0;font-size:19px;line-height:1.5;max-width:460px}
+.steps{list-style:none;margin:34px 0 0;padding:0;display:grid;gap:22px}
+.steps li{display:flex;gap:16px;align-items:flex-start}
+.steps .n{flex:none;width:44px;height:44px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px}
+.steps .n.g{background:var(--green);color:var(--paper)}
+.steps b{display:block;font-size:20px;font-weight:800}
+.steps span{font-size:17px;line-height:1.45}
+.panel{flex:1 1 480px;min-width:0;max-width:600px;background:#fff;border-radius:26px;border:2px solid var(--ink);box-shadow:10px 10px 0 var(--red);padding:34px}
+.panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.panel h3{margin:0;font-size:30px;font-weight:800}
+form{display:grid;gap:22px}
+.field{display:grid;gap:8px}
+.field label,legend{font-weight:700;font-size:16px}
+.field input{height:56px;padding:0 18px;border-radius:14px;border:2px solid var(--line);background:#FFFDF9;font:inherit;font-size:18px;color:var(--ink);width:100%}
+.field input::placeholder{color:#7A6B60}
+.field input:focus{outline:3px solid var(--red);outline-offset:1px;border-color:var(--red)}
+.field input[aria-invalid="true"]{border-color:var(--red)}
+.err{font-size:15px;font-weight:600;color:var(--red-text)}
+fieldset{border:0;margin:0;padding:0}
+legend{padding:0;margin-bottom:8px}
+.stepper-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.stepper{display:flex;align-items:center;border:2px solid var(--ink);border-radius:999px;overflow:hidden}
+.stepper button{width:56px;height:56px;border:0;background:#fff;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.stepper button.plus{background:var(--red);color:#fff}
+.stepper button:disabled{opacity:.35;cursor:default}
+.stepper output{min-width:64px;text-align:center;font-size:30px;font-weight:800}
+.summary{border:2px dashed var(--line);border-radius:18px;padding:18px 20px;display:grid;gap:10px;background:var(--cream)}
+.summary .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:17px}
+.summary hr{border:0;border-top:1px solid #E6DAC8;margin:0}
+.summary .total span{font-size:19px;font-weight:800}
+.summary .total strong{font-size:34px;font-weight:800}
+.summary .team{color:var(--green-text);font-weight:700}
+.btn-red{height:68px;background:var(--red);color:#fff;font-size:24px;letter-spacing:.08em;box-shadow:0 10px 24px rgba(212,17,26,.3)}
+.btn-red:hover{background:#BF0F17;color:#fff}
+.fine{margin:0;font-size:15px;line-height:1.45}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.alert{display:flex;gap:14px;align-items:flex-start;background:#FDECEA;border:2px solid var(--red);border-radius:18px;padding:16px 18px;color:var(--red-dark);font-size:17px;line-height:1.45}
+.alert svg{flex:none;margin-top:1px}
+.done-head{display:flex;align-items:center;gap:16px}
+.check{flex:none;width:56px;height:56px;border-radius:50%;background:var(--green-text);color:#fff;display:flex;align-items:center;justify-content:center}
+.done-head h3{font-size:36px;line-height:1}
+.pay{border:2px solid var(--ink);border-radius:20px;overflow:hidden}
+.pay-head{background:var(--ink);color:#fff;padding:14px 20px;font-weight:700;font-size:17px}
+.pay-body{padding:6px 20px 10px}
+.pay-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #E6DAC8;flex-wrap:wrap}
+.pay-row:last-child{border-bottom:0}
+.pay-row .k{font-size:17px;font-weight:600}
+.pay-row .v{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:700}
+.pay-row .amount{font-size:34px;font-weight:800}
+.copy{min-height:44px;padding:0 14px;border-radius:999px;border:2px solid var(--ink);background:#fff;color:var(--ink);font:inherit;font-size:14px;font-weight:700;cursor:pointer}
+.copy.ok{border-color:var(--green-text);background:#E7F3EC;color:var(--green-text)}
+.stack{display:grid;gap:22px}
+[hidden]{display:none!important}
+
+/* ---------- footer ---------- */
+footer{background:var(--green);color:var(--paper)}
+.foot{padding-top:56px;padding-bottom:64px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:32px}
+.foot-brand{display:flex;align-items:center;gap:18px}
+.foot-brand img{height:96px;width:auto}
+.foot-hand{font-family:var(--hand);font-size:40px;font-weight:700;line-height:1;color:var(--gold)}
+.foot p{margin:8px 0 0;font-size:17px}
+.foot-contact{font-size:17px;line-height:1.6}
+.foot-contact a{color:var(--paper)}
+
+@media (max-width:640px){
+  .wrap{padding-left:18px;padding-right:18px}
+  .hero-inner{padding-bottom:120px}
+  .brand img{height:60px}
+  .brand b{font-size:16px}.brand span{font-size:14px}
+  .top .btn{display:none}
+  .hero-grid{margin-top:30px;gap:28px}
+  .lede{font-size:17px}
+  .price strong{font-size:46px}
+  .ctas,.ctas .btn{width:100%}
+  .collage-note{font-size:26px;right:0}
+  .stada{transform:translateY(-80px);margin-bottom:-80px}
+  .board{padding:20px 18px;border-radius:22px}
+  .big strong{font-size:56px}
+  .tiles{grid-template-columns:1fr 1fr}
+  .tiles .tile:last-child{grid-column:1/-1}
+  .tile{padding:14px}
+  .tile-label{font-size:14px}
+  .big span{font-size:20px}
+  .tile-foot{font-size:14px}
+  .gallery{padding-top:56px;padding-bottom:64px}
+  .grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 12px;margin-top:28px}
+  .midi{padding:4px}
+  .order{padding-top:56px;padding-bottom:64px}
+  .panel{padding:22px 18px;box-shadow:6px 6px 0 var(--red)}
+  .pay-row .amount{font-size:30px}
+  .done-head h3{font-size:30px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="stripe" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div class="top">
+      <a class="brand" href="#">
+        <img src="assets/merki.png" alt="Merki Þróttar" width="445" height="559">
+        <div><b>Knattspyrnufélagið Þróttur</b><span>5. flokkur kvenna · Fjáröflun</span></div>
+      </a>
+      <a class="btn btn-white" href="#panta">Panta pakka
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <div class="hero-grid">
+      <div class="hero-text">
+        <span class="chip">Jólin 2026 · Fjáröflun</span>
+        <h1 class="cond">Jólamiðar</h1>
+        <p class="hand-sub">teiknaðir af stelpunum í 5. flokki</p>
+        <p class="lede">Merkimiðar á jólapakkana sem stelpurnar teiknuðu sjálfar. Í hverjum pakka eru 10 miðar sem raðast af handahófi úr 35 teikningum svo enginn pakki er eins.</p>
+        <div class="price-row">
+          <div class="price"><strong class="cond num" data-verd>1.500 kr.</strong><span>pakkinn · 10 miðar</span></div>
+          <div class="ctas">
+            <a class="btn btn-white" href="#panta">Panta pakka</a>
+            <a class="btn btn-ghost" href="#midar">Skoða miðana</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="collage" aria-hidden="true">
+        <div class="card" style="left:2%;top:4%;width:38%;transform:rotate(-9deg)"><img src="assets/midar/midi-13.webp" alt=""><span class="tape" style="transform:rotate(-4deg)"></span></div>
+        <div class="card" style="left:50%;top:0;width:36%;transform:rotate(7deg)"><img src="assets/midar/midi-07.webp" alt=""><span class="tape" style="transform:rotate(5deg)"></span></div>
+        <div class="card" style="left:0;top:52%;width:34%;transform:rotate(6deg)"><img src="assets/midar/midi-19.webp" alt=""></div>
+        <div class="card" style="left:64%;top:42%;width:34%;transform:rotate(10deg)"><img src="assets/midar/midi-10.webp" alt=""></div>
+        <div class="card" style="left:40%;top:64%;width:32%;transform:rotate(-5deg)"><img src="assets/midar/midi-02.webp" alt=""></div>
+        <div class="card" style="left:27%;top:27%;width:42%;transform:rotate(-2deg);padding:6px;box-shadow:0 22px 44px rgba(70,0,0,.45)"><img src="assets/midar/midi-05.webp" alt=""><span class="tape" style="width:44%;left:28%;transform:rotate(-2deg)"></span></div>
+        <div class="collage-note">
+          <svg width="54" height="48" viewBox="0 0 54 48" fill="none" stroke="#FFF1D6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M50 40C38 42 22 36 14 14"/><path d="M6 20l8-8 6 10"/></svg>
+          <span>35 ólíkar teikningar!</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="kraft">
+  <section class="wrap stada" aria-labelledby="stada-h">
+    <div class="board">
+      <div class="board-head">
+        <h2 id="stada-h"><span class="live" aria-hidden="true"></span>Staðan</h2>
+        <span class="muted" style="font-size:15px">Uppfærist um leið og pantanir berast</span>
+      </div>
+      <div class="tiles">
+        <div class="tile">
+          <div class="tile-label" id="frestur-label">Pöntunarfrestur rennur út eftir</div>
+          <div class="big cond num" id="countdown"><strong>–</strong></div>
+          <div class="tile-foot">Síðasti pöntunardagur: <strong id="frestur-dags">–</strong></div>
+        </div>
+        <div class="tile">
+          <div class="tile-label">Pantaðir pakkar</div>
+          <div class="big cond num"><strong id="s-pakkar">–</strong></div>
+          <div class="tile-foot"><strong id="s-midar">–</strong> á leið á jólapakka</div>
+        </div>
+        <div class="tile">
+          <div class="tile-label">Safnað fyrir flokkinn</div>
+          <div class="big cond num"><strong id="s-safnad">–</strong><span>kr.</span></div>
+          <div class="bar" role="progressbar" aria-label="Hlutfall af markmiði" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="s-bar"><i></i></div>
+          <div class="tile-foot"><strong id="s-pct">0%</strong> af markmiðinu <span id="s-markmid">–</span> kr.</div>
+        </div>
+      </div>
+      <p class="board-note" id="board-note">1.200 kr. af hverjum pakka renna til flokksins: 1.500 kr. söluverð að frádregnum 300 kr. framleiðslukostnaði.</p>
+    </div>
+  </section>
+
+  <section id="midar" class="wrap gallery" aria-labelledby="midar-h">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Miðarnir</div>
+        <h2 class="title cond" id="midar-h">35 teikningar.<br>10 í hverjum pakka.</h2>
+      </div>
+      <div>
+        <p>Miðarnir raðast af handahófi í pakkana. Þú veist ekki hvaða teikningar lenda hjá þér — það er hluti af gleðinni.</p>
+        <div class="draw-row">
+          <button type="button" class="btn btn-ink" id="draw">
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>
+            <span>Dragðu prufupakka</span>
+          </button>
+          <span class="hand-red">Hverjar lenda hjá þér?</span>
+        </div>
+      </div>
+    </div>
+    <div class="grid" id="grid" aria-live="polite"></div>
+  </section>
+</div>
+
+<section id="panta" aria-labelledby="panta-h">
+  <div class="stripe rev" aria-hidden="true"></div>
+  <div class="wrap order">
+    <div class="order-info">
+      <div class="eyebrow">Pöntun</div>
+      <h2 class="cond" id="panta-h">Pantaðu pakka</h2>
+      <p>Fylltu út formið og þú færð greiðsluupplýsingar strax. Pöntunin fer í framleiðslu þegar greiðsla hefur borist.</p>
+      <ol class="steps">
+        <li><span class="n">1</span><div><b>Þú pantar</b><span>Nafn, netfang og fjöldi pakka.</span></div></li>
+        <li><span class="n">2</span><div><b>Þú millifærir</b><span>Upphæð og reikningsnúmer birtast um leið og þú smellir á Panta.</span></div></li>
+        <li><span class="n">3</span><div><b>Við prentum og pökkum</b><span>Pakkinn fer í framleiðslu þegar greiðslan er komin.</span></div></li>
+        <li><span class="n g"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="1.5"/><path d="M12 8v13M3 12h18M12 8c-2-4-6-4-6-1.5S9 8 12 8zm0 0c2-4 6-4 6-1.5S15 8 12 8z"/></svg></span><div><b>Afhent fyrir jól</b><span id="afhending">Nánari upplýsingar um afhendingu koma í tölvupósti.</span></div></li>
+      </ol>
+    </div>
+
+    <div class="panel">
+      <!-- Pöntunarform -->
+      <form id="form" novalidate>
+        <div class="panel-head">
+          <h3 class="cond">Skráning</h3>
+          <span class="hand-red" style="font-size:26px;transform:rotate(-3deg)">tekur 30 sek.</span>
+        </div>
+        <div class="field">
+          <label for="nafn">Nafn</label>
+          <input id="nafn" name="nafn" type="text" autocomplete="name" placeholder="Fullt nafn" maxlength="80" required aria-describedby="nafn-err">
+          <span class="err" id="nafn-err" hidden>Skrifaðu nafnið þitt.</span>
+        </div>
+        <div class="field">
+          <label for="netfang">Netfang</label>
+          <input id="netfang" name="netfang" type="email" autocomplete="email" inputmode="email" placeholder="nafn@netfang.is" maxlength="120" required aria-describedby="netfang-err">
+          <span class="err" id="netfang-err" hidden>Netfangið virðist ekki rétt.</span>
+        </div>
+        <div class="hp" aria-hidden="true"><label for="vefsida">Vefsíða</label><input id="vefsida" name="vefsida" type="text" tabindex="-1" autocomplete="off"></div>
+        <fieldset>
+          <legend>Fjöldi pakka</legend>
+          <div class="stepper-row">
+            <div class="stepper">
+              <button type="button" id="minus" aria-label="Fækka pökkum"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"><path d="M5 12h14"/></svg></button>
+              <output id="pakkar" class="cond num" aria-live="polite">1</output>
+              <button type="button" id="plus" class="plus" aria-label="Fjölga pökkum"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"><path d="M5 12h14M12 5v14"/></svg></button>
+            </div>
+            <span style="font-size:17px;font-weight:600" id="pakkar-texti">1 pakki · 10 miðar</span>
+          </div>
+        </fieldset>
+        <div class="summary">
+          <div class="row"><span id="sum-line">1 × 1.500 kr.</span><span class="num" id="sum-a">1.500 kr.</span></div>
+          <hr>
+          <div class="row total"><span>Samtals</span><strong class="cond num" id="sum-total">1.500 kr.</strong></div>
+          <div class="row team"><span>Þar af til 5. flokks</span><span class="num" id="sum-team">1.200 kr.</span></div>
+        </div>
+        <button class="btn btn-red cond" type="submit" id="submit">
+          <span id="submit-text">PANTA</span>
+          <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <p class="alert" id="villa" role="alert" hidden></p>
+        <p class="fine">Þú færð greiðsluupplýsingar á næsta skjá og í tölvupósti. Netfangið er eingöngu notað vegna pöntunarinnar.</p>
+      </form>
+
+      <!-- Kvittun eftir pöntun -->
+      <div class="stack" id="kvittun" hidden tabindex="-1">
+        <div class="done-head">
+          <span class="check"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+          <div>
+            <h3 class="cond" id="k-takk">Takk!</h3>
+            <div style="margin-top:6px;font-size:17px">Pöntun nr. <strong id="k-nr">–</strong> er skráð: <span id="k-pakkar">–</span>.</div>
+          </div>
+        </div>
+        <div class="pay">
+          <div class="pay-head">Millifærðu á reikning flokksins</div>
+          <div class="pay-body">
+            <div class="pay-row"><span class="k">Upphæð</span><span class="v"><span class="amount cond num" id="k-upphaed">–</span></span></div>
+            <div class="pay-row"><span class="k">Reikningur</span><span class="v"><span class="num" id="k-reikningur">–</span><button type="button" class="copy" data-copy="k-reikningur" aria-label="Afrita reikningsnúmer">Afrita</button></span></div>
+            <div class="pay-row"><span class="k">Kennitala</span><span class="v"><span class="num" id="k-kennitala">–</span><button type="button" class="copy" data-copy="k-kennitala" aria-label="Afrita kennitölu">Afrita</button></span></div>
+            <div class="pay-row" id="k-eigandi-row" hidden><span class="k">Eigandi</span><span class="v"><span id="k-eigandi">–</span></span></div>
+            <div class="pay-row"><span class="k">Skýring</span><span class="v"><span class="num" id="k-skyring">–</span><button type="button" class="copy" data-copy="k-skyring" aria-label="Afrita skýringu">Afrita</button></span></div>
+          </div>
+        </div>
+        <div class="alert">
+          <svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 7.5v5.5M12 16.5h.01"/></svg>
+          <div><strong>Miðarnir verða ekki framleiddir fyrr en greiðsla hefur borist.</strong> <span id="k-greida-fyrir">Greiddu sem fyrst svo pakkinn náist fyrir jól.</span></div>
+        </div>
+        <p class="fine" id="k-post" style="font-size:16px">Við sendum þessar upplýsingar líka í tölvupósti.</p>
+        <button type="button" class="btn btn-line" id="ny" style="justify-self:start">Gera aðra pöntun</button>
+      </div>
+
+      <!-- Lokað -->
+      <div class="stack" id="lokad" hidden>
+        <h3 class="cond" style="font-size:36px">Pöntunum er lokað</h3>
+        <p style="margin:0;font-size:18px;line-height:1.5">Takk kærlega fyrir frábærar viðtökur! Fresturinn til að panta jólamiða er liðinn.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="stripe rev" aria-hidden="true"></div>
+  <div class="wrap foot">
+    <div class="foot-brand">
+      <img src="assets/merki.png" alt="Merki Þróttar" width="445" height="559">
+      <div>
+        <div class="foot-hand">Takk fyrir að styrkja stelpurnar!</div>
+        <p>Ágóðinn rennur óskiptur til 5. flokks kvenna í Þrótti.</p>
+      </div>
+    </div>
+    <div class="foot-contact">
+      <div id="tengilidur" hidden><b>Spurningar um pöntun?</b><br><a id="tengilidur-a" href="#"></a></div>
+      <div style="margin-top:8px">Knattspyrnufélagið Þróttur · Laugardal</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* =========================================================
+   STILLINGAR
+   scriptUrl: slóðin á Google Apps Script vefforritið.
+   Hin gildin eru bara til vara: raunveruleg gildi koma úr
+   flipanum „Stillingar“ í pöntunartöflunni.
+   ========================================================= */
+const CONFIG = {
+  scriptUrl: '',
+  frestur: '2026-12-01T23:59:00',
+  markmid: 300000,
+  verd: 1500,
+  kostnadur: 300,
+  reikningur: '0000-26-000000',
+  kennitala: '000000-0000',
+  eigandi: '',
+  afhending: '',
+  tengilidur: '',
+  opid: true,
+  demoPakkar: 0
+};
+
+const MIDAR = ['Jólasveinn','Jólapakki og Gleðileg jól','Piparkökukarl í snjókomu','Jólatré á köflóttum grunni','Snjókarl og stjörnur','Gluggi út í snjóinn','Gleðileg jól og kristþyrnir','Kertalogi og Gleðileg jól','Jólatré og snjókarl við sólsetur','Skreytt jólatré og snjókorn','Jólatré í snjókomu','Jólatré og ljósasería','Jólastafur á röndóttum grunni','Jólatré með seríu','Jólastafur','Snjókarl','Jólatré við arininn','Litríkt mynstur','Jólakrans','Snjókarl í snjónum','Gleðileg jól, hó hó hó','Lítið jólatré','Kakóbolli','Jólapakkar og ljósasería','Gleðileg jól og jólatré','Jólatré og snjókarl','Jólakúla','Jól','Pakkar','Gleðileg jól og snjókarl','Jól og snjókorn','Bleikt jólatré','Gleðileg jól og jólastafur','Lítil jólatré','Jólakerti'];
+const MANUDIR = ['janúar','febrúar','mars','apríl','maí','júní','júlí','ágúst','september','október','nóvember','desember'];
+
+const $ = (id) => document.getElementById(id);
+const fmt = (n) => String(Math.round(Number(n) || 0)).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+const ft = (n, one, many) => (n % 10 === 1 && n % 100 !== 11) ? one : many;
+const pakkiOrd = (n) => n + ' ' + ft(n, 'pakki', 'pakkar');
+
+let S = Object.assign({}, CONFIG);   // virkar stillingar
+let stats = { pakkar: CONFIG.demoPakkar };
+let pakkar = 1;
+
+/* ---------- myndasafn ---------- */
+const grid = $('grid');
+MIDAR.forEach((alt, i) => {
+  const f = document.createElement('figure');
+  f.className = 'midi';
+  f.style.setProperty('--r', ((((i * 37) % 9) - 4) * 0.6) + 'deg');
+  const img = document.createElement('img');
+  img.src = 'assets/midar/midi-' + String(i + 1).padStart(2, '0') + '.webp';
+  img.alt = 'Jólamiði: ' + alt;
+  img.loading = 'lazy';
+  img.width = 560; img.height = 560;
+  f.appendChild(img);
+  grid.appendChild(f);
+});
+$('draw').addEventListener('click', () => {
+  const items = [...grid.children];
+  items.forEach((el) => el.classList.remove('pick'));
+  const idx = items.map((_, i) => i).sort(() => Math.random() - 0.5).slice(0, 10);
+  idx.forEach((i) => items[i].classList.add('pick'));
+  grid.classList.add('drawn');
+  $('draw').querySelector('span').textContent = 'Draga aftur';
+});
+
+/* ---------- staðan ---------- */
+function frestur() { const d = new Date(S.frestur); return isNaN(d) ? null : d; }
+function dagsetning(d) { return d ? d.getDate() + '. ' + MANUDIR[d.getMonth()] : '–'; }
+function opid() { const d = frestur(); return S.opid !== false && (!d || d.getTime() > Date.now()); }
+
+function renderCountdown() {
+  const d = frestur();
+  $('frestur-dags').textContent = dagsetning(d);
+  const el = $('countdown');
+  if (!opid()) { el.innerHTML = '<strong>Lokað</strong>'; $('frestur-label').textContent = 'Pöntunarfrestur'; return; }
+  if (!d) { el.innerHTML = '<strong>–</strong>'; return; }
+  const ms = d.getTime() - Date.now();
+  const days = Math.floor(ms / 864e5), hours = Math.floor((ms % 864e5) / 36e5), mins = Math.floor((ms % 36e5) / 6e4);
+  el.innerHTML = days > 0
+    ? '<strong>' + days + '</strong><span>' + ft(days, 'dagur', 'dagar') + '</span><span>' + hours + ' klst.</span>'
+    : '<strong>' + hours + '</strong><span>klst.</span><span>' + mins + ' mín.</span>';
+}
+
+function renderStats() {
+  const p = Number(stats.pakkar) || 0;
+  const perPakka = S.verd - S.kostnadur;
+  const safnad = p * perPakka;
+  const pct = Math.min(100, Math.round(safnad / (S.markmid || 1) * 100));
+  $('s-pakkar').textContent = fmt(p);
+  $('s-midar').textContent = fmt(p * 10) + ' miðar';
+  $('s-safnad').textContent = fmt(safnad);
+  $('s-markmid').textContent = fmt(S.markmid);
+  $('s-pct').textContent = pct + '%';
+  $('s-bar').setAttribute('aria-valuenow', pct);
+  $('s-bar').firstElementChild.style.width = pct + '%';
+  $('board-note').textContent = fmt(perPakka) + ' kr. af hverjum pakka renna til flokksins: ' + fmt(S.verd) + ' kr. söluverð að frádregnum ' + fmt(S.kostnadur) + ' kr. framleiðslukostnaði.';
+  document.querySelector('[data-verd]').textContent = fmt(S.verd) + ' kr.';
+  if (S.afhending) $('afhending').textContent = S.afhending;
+  if (S.tengilidur) { $('tengilidur').hidden = false; $('tengilidur-a').textContent = S.tengilidur; $('tengilidur-a').href = 'mailto:' + S.tengilidur; }
+  renderCountdown();
+  renderSummary();
+  if (!opid() && $('kvittun').hidden) { $('form').hidden = true; $('lokad').hidden = false; }
+}
+
+async function hladaStodu() {
+  if (!S.scriptUrl) { renderStats(); return; }
+  try {
+    const r = await fetch(S.scriptUrl + '?a=stada&t=' + Date.now());
+    const d = await r.json();
+    if (d && d.ok) {
+      ['frestur','markmid','verd','kostnadur','reikningur','kennitala','eigandi','afhending','tengilidur','opid'].forEach((k) => { if (d[k] !== undefined && d[k] !== null && d[k] !== '') S[k] = d[k]; });
+      stats.pakkar = d.pakkar;
+    }
+  } catch (e) { /* sýnum varagildin */ }
+  renderStats();
+}
+
+/* ---------- pöntunarform ---------- */
+function renderSummary() {
+  $('pakkar').textContent = pakkar;
+  $('pakkar-texti').textContent = pakkiOrd(pakkar) + ' · ' + (pakkar * 10) + ' miðar';
+  $('sum-line').textContent = pakkar + ' × ' + fmt(S.verd) + ' kr.';
+  $('sum-a').textContent = fmt(pakkar * S.verd) + ' kr.';
+  $('sum-total').textContent = fmt(pakkar * S.verd) + ' kr.';
+  $('sum-team').textContent = fmt(pakkar * (S.verd - S.kostnadur)) + ' kr.';
+  $('minus').disabled = pakkar <= 1;
+  $('plus').disabled = pakkar >= 50;
+}
+$('minus').addEventListener('click', () => { pakkar = Math.max(1, pakkar - 1); renderSummary(); });
+$('plus').addEventListener('click', () => { pakkar = Math.min(50, pakkar + 1); renderSummary(); });
+
+function synaVillu(id, show) {
+  $(id + '-err').hidden = !show;
+  $(id).setAttribute('aria-invalid', show ? 'true' : 'false');
+}
+
+$('form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const nafn = $('nafn').value.trim();
+  const netfang = $('netfang').value.trim();
+  const nafnOk = nafn.length >= 2;
+  const netfangOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(netfang);
+  synaVillu('nafn', !nafnOk);
+  synaVillu('netfang', !netfangOk);
+  if (!nafnOk) { $('nafn').focus(); return; }
+  if (!netfangOk) { $('netfang').focus(); return; }
+
+  const btn = $('submit');
+  btn.disabled = true; $('submit-text').textContent = 'Skrái pöntun…';
+  $('villa').hidden = true;
+  const gogn = { nafn, netfang, pakkar, vefsida: $('vefsida').value };
+
+  try {
+    let svar;
+    if (S.scriptUrl) {
+      const r = await fetch(S.scriptUrl, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(gogn) });
+      svar = await r.json();
+    } else {
+      // Sýniútgáfa: ekkert vistað
+      svar = { ok: true, nr: '0000', pakkar, upphaed: pakkar * S.verd, reikningur: S.reikningur, kennitala: S.kennitala, eigandi: S.eigandi, frestur: S.frestur, postur: false };
+    }
+    if (!svar || !svar.ok) throw new Error((svar && svar.villa) || 'villa');
+    synaKvittun(svar, nafn, netfang);
+    stats.pakkar = (Number(stats.pakkar) || 0) + pakkar;
+    renderStats();
+    setTimeout(hladaStodu, 1500);
+  } catch (err) {
+    const m = err && err.message && err.message !== 'villa' && err.message !== 'Failed to fetch' ? err.message : 'Ekki tókst að skrá pöntunina. Athugaðu nettenginguna og reyndu aftur.';
+    $('villa').textContent = m;
+    $('villa').hidden = false;
+  } finally {
+    btn.disabled = false; $('submit-text').textContent = 'PANTA';
+  }
+});
+
+function synaKvittun(s, nafn, netfang) {
+  const fornafn = nafn.split(/\s+/)[0];
+  $('k-takk').textContent = 'Takk, ' + fornafn + '!';
+  $('k-nr').textContent = s.nr;
+  $('k-pakkar').textContent = pakkiOrd(s.pakkar) + ' (' + (s.pakkar * 10) + ' miðar)';
+  $('k-upphaed').textContent = fmt(s.upphaed) + ' kr.';
+  $('k-reikningur').textContent = s.reikningur || S.reikningur;
+  $('k-kennitala').textContent = s.kennitala || S.kennitala;
+  $('k-skyring').textContent = s.nr;
+  if (s.eigandi) { $('k-eigandi').textContent = s.eigandi; $('k-eigandi-row').hidden = false; }
+  const d = new Date(s.frestur || S.frestur);
+  if (!isNaN(d)) $('k-greida-fyrir').textContent = 'Greiddu fyrir ' + dagsetning(d) + ' svo pakkinn náist fyrir jól.';
+  $('k-post').innerHTML = s.postur === false ? 'Taktu skjáskot af þessum upplýsingum.' : 'Við sendum þessar upplýsingar líka á <strong></strong>.';
+  const strong = $('k-post').querySelector('strong'); if (strong) strong.textContent = netfang;
+  $('form').hidden = true;
+  $('kvittun').hidden = false;
+  $('kvittun').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  $('kvittun').focus({ preventScroll: true });
+}
+
+document.querySelectorAll('.copy').forEach((b) => b.addEventListener('click', async () => {
+  const txt = $(b.dataset.copy).textContent.trim();
+  try { await navigator.clipboard.writeText(txt); } catch (e) {}
+  b.textContent = 'Afritað'; b.classList.add('ok');
+  setTimeout(() => { b.textContent = 'Afrita'; b.classList.remove('ok'); }, 1800);
+}));
+
+$('ny').addEventListener('click', () => {
+  $('form').reset(); pakkar = 1; renderSummary();
+  $('kvittun').hidden = true; $('form').hidden = false;
+  $('nafn').focus();
+});
+
+renderStats();
+hladaStodu();
+setInterval(renderCountdown, 30000);
+setInterval(hladaStodu, 60000);
+</script>
+</body>
+</html>

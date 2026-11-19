@@ -40,6 +40,7 @@ const SJALFGEFNAR_STILLINGAR = [
 function uppsetning() {
   const ss = tafla_();
   ss.setSpreadsheetTimeZone(TIMABELTI);
+  ss.setSpreadsheetLocale('is_IS');
 
   let p = ss.getSheetByName(BLAD_PANTANIR);
   if (!p) {

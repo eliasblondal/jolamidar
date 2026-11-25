@@ -17,14 +17,14 @@ const BLAD_STILLINGAR = 'Stillingar';
 const TIMABELTI = 'Atlantic/Reykjavik';
 const MANUDIR = ['janúar', 'febrúar', 'mars', 'apríl', 'maí', 'júní', 'júlí', 'ágúst', 'september', 'október', 'nóvember', 'desember'];
 
-const DALKAR = ['Pöntunarnr.', 'Tími', 'Nafn', 'Iðkandi', 'Netfang', 'Pakkar', 'Upphæð (kr.)', 'Til flokksins (kr.)', 'Greitt', 'Afhent', 'Hætt við', 'Athugasemd'];
+const DALKAR = ['Pöntunarnr.', 'Tími', 'Nafn', 'Iðkandi', 'Netfang', 'Pakkar', 'Upphæð (kr.)', 'Í ferðasjóð (kr.)', 'Greitt', 'Afhent', 'Hætt við', 'Athugasemd'];
 const D = { NR: 1, TIMI: 2, NAFN: 3, IDKANDI: 4, NETFANG: 5, PAKKAR: 6, UPPHAED: 7, TIL_FLOKKS: 8, GREITT: 9, AFHENT: 10, HAETT: 11, ATH: 12 };
 
 const SJALFGEFNAR_STILLINGAR = [
   ['Pöntunarfrestur', new Date(Date.UTC(2026, 10, 27, 23, 59)), 'Síðasti pöntunardagur og tími'],
   ['Pantanir opnar', true, 'Taktu hakið af til að loka fyrir pantanir'],
   ['Verð pakka (kr.)', 1500, 'Söluverð með vsk.'],
-  ['Kostnaður pakka (kr.)', 300, 'Framleiðslukostnaður með vsk.'],
+  ['Kostnaður pakka (kr.)', 400, 'Kostnaður með vsk. Þetta er lagt inn við pöntun'],
   ['Reikningur', '0133-26-201701', 'Banki-hb-reikningsnúmer'],
   ['Kennitala', '520109-0210', 'Kennitala reikningseiganda'],
   ['Eigandi reiknings', '', 'Valfrjálst, t.d. „Þróttur – 5. fl. kvenna“'],
@@ -100,8 +100,8 @@ function doPost(e) {
     if (!erOpid_(st)) return json_({ ok: false, villa: 'Pöntunum er lokað. Takk fyrir áhugann!' });
 
     const verd = Number(st['Verð pakka (kr.)']) || 1500;
-    const kostn = Number(st['Kostnaður pakka (kr.)']) || 300;
-    const upphaed = pakkar * verd;
+    const kostn = Number(st['Kostnaður pakka (kr.)']) || 400;
+    const upphaed = pakkar * kostn;
 
     lock.waitLock(20000); laest = true;
     const nr = naestaNumer_();
@@ -119,6 +119,7 @@ function doPost(e) {
       ok: true, nr: nr, idkandi: idkandi, pakkar: pakkar, upphaed: upphaed,
       reikningur: String(st['Reikningur'] || ''), kennitala: String(st['Kennitala'] || ''),
       eigandi: String(st['Eigandi reiknings'] || ''),
+      verd: verd, kostnadur: kostn,
       frestur: frestur ? frestur.toISOString() : null,
       postur: false
     };
@@ -174,7 +175,7 @@ function stada_() {
     });
   }
   const verd = Number(st['Verð pakka (kr.)']) || 1500;
-  const kostn = Number(st['Kostnaður pakka (kr.)']) || 300;
+  const kostn = Number(st['Kostnaður pakka (kr.)']) || 400;
   const f = st['Pöntunarfrestur'];
   return {
     ok: true,
@@ -236,7 +237,8 @@ function sendaStadfestingu_(netfang, nafn, s, st) {
     '</table></td></tr></tbody></table>' +
     '<div style="margin-top:18px;background:#FDECEA;border:2px solid #D4111A;border-radius:12px;padding:12px 14px;color:#7E0910;font-size:15px;line-height:1.45">' +
     '<b>Miðarnir verða ekki framleiddir fyrr en greiðsla hefur borist.</b>' + (frestur ? ' Greiddu fyrir ' + frestur + '.' : '') + '</div>' +
-    (st['Afhending'] ? '<p style="font-size:15px;margin:18px 0 0">' + esc_(st['Afhending']) + '</p>' : '') +
+    '<p style="font-size:15px;margin:18px 0 0;color:#0B5B3C"><b>Seldu pakkana á ' + kr_(s.verd) + ' stykkið og ' + kr_(s.pakkar * (s.verd - s.kostnadur)) + ' fara í ferðasjóð iðkandans.</b></p>' +
+    (st['Afhending'] ? '<p style="font-size:15px;margin:12px 0 0">' + esc_(st['Afhending']) + '</p>' : '') +
     '<p style="font-size:15px;margin:18px 0 0">Takk fyrir að styrkja stelpurnar!</p>' +
     (tengilidur ? '<p style="font-size:14px;margin:12px 0 0">Spurningar? Svaraðu þessum pósti eða skrifaðu á ' + esc_(tengilidur) + '.</p>' : '') +
     '</div></div></div>';
@@ -244,6 +246,7 @@ function sendaStadfestingu_(netfang, nafn, s, st) {
   const texti = 'Takk fyrir pöntunina, ' + fornafn + '!\n\nPöntun nr. ' + s.nr + ': ' + pakkaOrd + '. Iðkandi: ' + s.idkandi + '.\n\n' +
     'Millifærðu ' + kr_(s.upphaed) + ' á reikning ' + s.reikningur + ', kt. ' + s.kennitala + '.\n\n' +
     'Miðarnir verða ekki framleiddir fyrr en greiðsla hefur borist.' + (frestur ? ' Greiddu fyrir ' + frestur + '.' : '') +
+    '\n\nSeldu pakkana á ' + kr_(s.verd) + ' stykkið og ' + kr_(s.pakkar * (s.verd - s.kostnadur)) + ' fara í ferðasjóð iðkandans.' +
     (st['Afhending'] ? '\n\n' + st['Afhending'] : '') + '\n\nTakk fyrir að styrkja stelpurnar!';
 
   const opt = { htmlBody: html, name: 'Jólamiðar 5. flokks Þróttar' };
@@ -285,4 +288,18 @@ function setjaStillingu_(lykill, gildi) {
     if (String(keys[i][0]).trim() === lykill) { s.getRange(i + 2, 2).setValue(gildi); return; }
   }
   s.appendRow([lykill, gildi, '']);
+}
+
+/* ================= Uppfærsla 25. nóv. (keyrð einu sinni) ================= */
+
+// Nýtt verðlíkan: 400 kr. lagt inn við pöntun, 1.100 kr. af hverjum pakka í ferðasjóð iðkanda
+function uppfaersla3() {
+  const p = tafla_().getSheetByName(BLAD_PANTANIR);
+  p.getRange(1, D.TIL_FLOKKS).setValue('Í ferðasjóð (kr.)');
+  setjaStillingu_('Kostnaður pakka (kr.)', 400);
+  const s = tafla_().getSheetByName(BLAD_STILLINGAR);
+  const keys = s.getRange(2, 1, s.getLastRow() - 1, 1).getValues();
+  for (let i = 0; i < keys.length; i++) {
+    if (String(keys[i][0]).trim() === 'Kostnaður pakka (kr.)') s.getRange(i + 2, 3).setValue('Kostnaður með vsk. Þetta er lagt inn við pöntun');
+  }
 }

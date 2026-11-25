@@ -21,14 +21,14 @@ const DALKAR = ['Pöntunarnr.', 'Tími', 'Nafn', 'Iðkandi', 'Netfang', 'Pakkar'
 const D = { NR: 1, TIMI: 2, NAFN: 3, IDKANDI: 4, NETFANG: 5, PAKKAR: 6, UPPHAED: 7, TIL_FLOKKS: 8, GREITT: 9, AFHENT: 10, HAETT: 11, ATH: 12 };
 
 const SJALFGEFNAR_STILLINGAR = [
-  ['Pöntunarfrestur', new Date(Date.UTC(2026, 10, 27, 23, 59)), 'Síðasti pöntunardagur og tími'],
+  ['Pöntunarfrestur', new Date(Date.UTC(2026, 11, 4, 23, 59)), 'Síðasti pöntunardagur og tími'],
   ['Pantanir opnar', true, 'Taktu hakið af til að loka fyrir pantanir'],
   ['Verð pakka (kr.)', 1500, 'Söluverð með vsk.'],
   ['Kostnaður pakka (kr.)', 400, 'Kostnaður með vsk. Þetta er lagt inn við pöntun'],
   ['Reikningur', '0133-26-201701', 'Banki-hb-reikningsnúmer'],
   ['Kennitala', '520109-0210', 'Kennitala reikningseiganda'],
   ['Eigandi reiknings', '', 'Valfrjálst, t.d. „Þróttur – 5. fl. kvenna“'],
-  ['Afhending', 'Áætluð afhending er 4. desember.', 'Birtist á vefnum og í staðfestingarpósti'],
+  ['Afhending', 'Áætluð afhending er 10.–11. desember.', 'Birtist á vefnum og í staðfestingarpósti'],
   ['Netfang tengiliðs', 'elias@elias.is', 'Birtist á vefnum og sem svarnetfang í pósti'],
   ['Senda staðfestingarpóst', true, 'Sendir kaupanda greiðsluupplýsingar'],
   ['Slóð vefsins', '', 'Notað fyrir merkið í staðfestingarpósti']
@@ -302,4 +302,12 @@ function uppfaersla3() {
   for (let i = 0; i < keys.length; i++) {
     if (String(keys[i][0]).trim() === 'Kostnaður pakka (kr.)') s.getRange(i + 2, 3).setValue('Kostnaður með vsk. Þetta er lagt inn við pöntun');
   }
+}
+
+/* ================= Uppfærsla 25. nóv. b (keyrð einu sinni) ================= */
+
+// Frestur 4. desember, áætluð afhending 10.–11. desember
+function uppfaersla4() {
+  setjaStillingu_('Pöntunarfrestur', new Date(Date.UTC(2026, 11, 4, 23, 59)));
+  setjaStillingu_('Afhending', 'Áætluð afhending er 10.–11. desember.');
 }

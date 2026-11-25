@@ -215,6 +215,8 @@ function sendaStadfestingu_(netfang, nafn, s, st) {
   const frestur = s.frestur ? dags_(new Date(s.frestur)) : null;
   const slod = String(st['Slóð vefsins'] || '').replace(/\/$/, '');
   const tengilidur = String(st['Netfang tengiliðs'] || '');
+  const vefur = slod || 'https://eliasblondal.github.io/jolamidar';
+  const kynning = vefur + '/kynning/?idkandi=' + encodeURIComponent(s.idkandi || '');
   const pakkaOrd = s.pakkar + ' ' + ((s.pakkar % 10 === 1 && s.pakkar % 100 !== 11) ? 'pakki' : 'pakkar');
   const rod = (k, v) => '<tr><td style="padding:10px 0;border-bottom:1px solid #E6DAC8;font-size:15px">' + k + '</td><td style="padding:10px 0;border-bottom:1px solid #E6DAC8;font-size:17px;font-weight:700;text-align:right">' + esc_(v) + '</td></tr>';
 
@@ -239,6 +241,9 @@ function sendaStadfestingu_(netfang, nafn, s, st) {
     '<b>Miðarnir verða ekki framleiddir fyrr en greiðsla hefur borist.</b>' + (frestur ? ' Greiddu fyrir ' + frestur + '.' : '') + '</div>' +
     '<p style="font-size:15px;margin:18px 0 0;color:#0B5B3C"><b>Seldu pakkana á ' + kr_(s.verd) + ' stykkið og ' + kr_(s.pakkar * (s.verd - s.kostnadur)) + ' fara í ferðasjóð iðkandans.</b></p>' +
     (st['Afhending'] ? '<p style="font-size:15px;margin:12px 0 0">' + esc_(st['Afhending']) + '</p>' : '') +
+    '<div style="margin-top:18px;background:#F4EEE3;border-radius:12px;padding:14px 16px;font-size:15px;line-height:1.45">' +
+    '<b>Kynning fyrir ömmu, afa og vini</b><br>Sendu þessa slóð á þá sem vilja kaupa miða. Þar sést hvað er verið að selja og hvert peningarnir fara.<br>' +
+    '<a href="' + esc_(kynning) + '" style="color:#B00D16;font-weight:700">' + esc_(vefur.replace(/^https?:\/\//, '')) + '/kynning</a></div>' +
     '<p style="font-size:15px;margin:18px 0 0">Takk fyrir að styrkja stelpurnar!</p>' +
     (tengilidur ? '<p style="font-size:14px;margin:12px 0 0">Spurningar? Svaraðu þessum pósti eða skrifaðu á ' + esc_(tengilidur) + '.</p>' : '') +
     '</div></div></div>';
@@ -247,7 +252,9 @@ function sendaStadfestingu_(netfang, nafn, s, st) {
     'Millifærðu ' + kr_(s.upphaed) + ' á reikning ' + s.reikningur + ', kt. ' + s.kennitala + '.\n\n' +
     'Miðarnir verða ekki framleiddir fyrr en greiðsla hefur borist.' + (frestur ? ' Greiddu fyrir ' + frestur + '.' : '') +
     '\n\nSeldu pakkana á ' + kr_(s.verd) + ' stykkið og ' + kr_(s.pakkar * (s.verd - s.kostnadur)) + ' fara í ferðasjóð iðkandans.' +
-    (st['Afhending'] ? '\n\n' + st['Afhending'] : '') + '\n\nTakk fyrir að styrkja stelpurnar!';
+    (st['Afhending'] ? '\n\n' + st['Afhending'] : '') +
+    '\n\nKynning fyrir ömmu, afa og vini (sendu þeim þessa slóð):\n' + kynning +
+    '\n\nTakk fyrir að styrkja stelpurnar!';
 
   const opt = { htmlBody: html, name: 'Jólamiðar 5. flokks Þróttar' };
   if (tengilidur) opt.replyTo = tengilidur;

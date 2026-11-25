@@ -1,10 +1,11 @@
 # Jólamiðar 5. flokks kvenna · Þróttur
 
-Fjáröflunarsíða þar sem hægt er að panta pakka af jólamiðum sem stelpurnar í 5. flokki teiknuðu. 10 miðar í pakka á 1.500 kr. (300 kr. kostnaður, 1.200 kr. renna til flokksins).
+Fjáröflunarsíða þar sem foreldrar og iðkendur panta pakka af jólamiðum sem stelpurnar í 5. flokki teiknuðu. Pakkinn (10 miðar) er pantaður á 400 kr. og seldur á 1.500 kr. Mismunurinn, 1.100 kr., fer í ferðasjóð iðkandans.
 
 ## Hvernig þetta virkar
 
-- **Vefurinn** (`index.html`) er hýstur á GitHub Pages.
+- **Pöntunarsíðan** (`index.html`) er fyrir foreldra og iðkendur og er hýst á GitHub Pages.
+- **Kynningarsíðan** (`kynning/index.html`) er fyrir ömmur, afa og aðra kaupendur. Hún sýnir ekkert pöntunarform. Slóðin `kynning/?idkandi=Nafn` birtir nafn iðkandans efst.
 - **Pantanir** fara í Google Sheet („Jólamiðar Þróttar – pantanir“) í gegnum Google Apps Script (`apps-script/Code.gs`).
 - **Staðan** á vefnum (frestur, pantaðir pakkar, safnað) les samtölur úr töflunni. Nöfn og netföng birtast aldrei á vefnum.
 - Kaupandi fær greiðsluupplýsingar strax á skjánum og í tölvupósti.

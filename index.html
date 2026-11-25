@@ -119,6 +119,59 @@ h2.title{margin:10px 0 0;font-size:clamp(44px,5.6vw,76px);line-height:.95;font-w
 .midi .paper{padding:6px}
 .midi:hover{transform:rotate(0) scale(1.07);filter:drop-shadow(0 14px 16px rgba(28,23,20,.28));z-index:2}
 
+/* ---------- svona virkar þetta ---------- */
+.how{padding-top:96px}
+.split{margin:56px 0 0}
+.split-top{display:flex;flex-direction:column;align-items:center}
+.split-label{font-size:22px;font-weight:800;letter-spacing:.02em;text-transform:uppercase}
+.split-top svg{display:block;width:100%;height:26px;margin-top:6px}
+.split-bar{display:flex;margin-top:6px;border-radius:22px;overflow:hidden;box-shadow:0 16px 34px rgba(28,23,20,.16);border:3px solid var(--ink)}
+.seg{min-width:0;flex:1 1 0;box-sizing:border-box;padding:24px 26px 22px}
+.seg strong{display:block;font-size:52px;line-height:.95;font-weight:800;white-space:nowrap}
+.seg span{display:block;margin-top:6px;font-size:17px}
+.seg-cost{flex-grow:400;background:var(--green);color:var(--paper)}
+.seg-cost span{font-weight:600;color:var(--mint)}
+.seg-fund{flex-grow:1100;color:#fff;border-left:3px solid var(--ink);display:flex;align-items:center;justify-content:space-between;gap:16px;background-color:var(--red);background-image:repeating-linear-gradient(90deg,var(--red) 0 48px,var(--red-2) 48px 96px)}
+.seg-fund span{font-weight:700}
+.split-notes{display:flex;margin-top:14px;font-family:var(--hand);font-size:27px;font-weight:700;line-height:1.05}
+.split-notes>div{min-width:0;flex:1 1 0;display:flex;align-items:flex-start;gap:6px}
+.split-notes svg{flex:none}
+.note-cost{flex-grow:400!important;color:var(--green-text)}
+.note-fund{flex-grow:1100!important;padding-left:20px;color:var(--red-text)}
+.how-steps{list-style:none;margin:72px 0 0;padding:0;display:flex;flex-wrap:wrap;align-items:stretch;gap:20px}
+.how-steps>li{flex:1 1 300px;min-width:0;background:#fff;border:2px solid var(--ink);border-radius:24px;padding:26px 26px 28px;display:flex;flex-direction:column}
+.how-steps>li:nth-child(1){box-shadow:8px 8px 0 var(--green)}
+.how-steps>li:nth-child(2){box-shadow:8px 8px 0 var(--red)}
+.how-steps>li:nth-child(3){box-shadow:8px 8px 0 var(--gold)}
+.how-art{position:relative;height:170px}
+.how-art .mini{position:absolute;width:118px;container-type:inline-size;filter:drop-shadow(0 8px 10px rgba(28,23,20,.22))}
+.how-art .mini .paper{padding:4px}
+.art-house{position:absolute;left:0;top:10px}
+.art-ferry{position:absolute;left:0;top:0}
+.pill{position:absolute;right:0;bottom:-4px;border-radius:999px;padding:8px 14px;font-size:20px;font-weight:800}
+.pill-g{background:var(--green);color:var(--paper);transform:rotate(-4deg);box-shadow:0 6px 14px rgba(15,58,45,.3)}
+.pill-r{background:var(--red);color:#fff;transform:rotate(3deg);box-shadow:0 6px 14px rgba(212,17,26,.3)}
+.pill-y{background:var(--gold);color:var(--ink);transform:rotate(-3deg);box-shadow:0 6px 14px rgba(160,110,0,.25)}
+.step-head{display:flex;align-items:center;gap:12px;margin-top:26px}
+.step-head .n{flex:none;width:40px;height:40px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:19px}
+.step-head h3{margin:0;font-size:32px;font-weight:800}
+.how-steps p{margin:10px 0 0;font-size:18px;line-height:1.45}
+.calc{margin-top:56px;background:var(--green);color:var(--paper);border-radius:24px;padding:28px 30px;display:flex;flex-wrap:wrap;align-items:center;gap:24px 40px;box-shadow:0 22px 50px rgba(15,58,45,.3)}
+.calc-q{flex:1 1 300px;min-width:0}
+.calc-k{font-size:15px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.calc-row>span{white-space:nowrap}
+.calc-row{margin-top:10px;display:flex;flex-wrap:wrap;align-items:center;gap:14px;font-size:26px;font-weight:700}
+.calc-step{display:flex;align-items:center;border:2px solid var(--paper);border-radius:999px;overflow:hidden}
+.calc-step button{width:52px;height:52px;border:0;background:transparent;color:var(--paper);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.calc-step button.plus{background:var(--gold);color:var(--ink)}
+.calc-step output{min-width:58px;text-align:center;font-size:34px;font-weight:800}
+.calc-out{flex:2 1 520px;min-width:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.calc-out>div{background:rgba(255,246,224,.06);border:1px solid rgba(255,246,224,.16);border-radius:16px;padding:14px 16px}
+.calc-out>div.hl{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.calc-out span{display:block;font-size:15px;font-weight:600;color:var(--mint)}
+.calc-out .hl span{color:var(--ink);font-weight:700}
+.calc-out strong{display:block;margin-top:4px;font-size:34px;font-weight:800}
+
 /* ---------- pöntun ---------- */
 .order{padding-top:96px;padding-bottom:110px;display:flex;flex-wrap:wrap;gap:48px 64px;align-items:flex-start}
 .order-info{flex:1 1 380px;min-width:0}
@@ -188,6 +241,31 @@ footer{background:var(--green);color:var(--paper)}
 .foot-contact a{color:var(--paper)}
 
 @media (max-width:640px){
+  .how{padding-top:56px}
+  .split{margin-top:34px}
+  .split-label{font-size:17px}
+  .split-top svg{height:20px}
+  .split-bar{border-radius:18px}
+  .seg{padding:14px 10px}
+  .seg strong{font-size:27px}
+  .seg-cost{min-width:108px}
+  .seg-fund strong{font-size:38px}
+  .seg span{font-size:13px}
+  .seg-icon{display:none}
+  .split-notes{font-size:21px}
+  .split-notes svg{display:none}
+  .note-fund{padding-left:14px}
+  .how-steps{margin-top:40px;gap:18px}
+  .how-steps>li{padding:20px 18px 22px}
+  .step-head h3{font-size:28px}
+  .how-steps p{font-size:16px}
+  .calc{padding:22px 18px;margin-top:32px}
+  .calc-row{font-size:21px;gap:10px;flex-wrap:nowrap}
+  .calc-step button{width:44px;height:44px}
+  .calc-step output{min-width:46px;font-size:28px}
+  .calc-out{grid-template-columns:1fr}
+  .calc-out>div{display:flex;justify-content:space-between;align-items:baseline}
+  .calc-out strong{font-size:26px;margin-top:0}
   .wrap{padding-left:18px;padding-right:18px}
   .hero-inner{padding-bottom:120px}
   .brand img{height:60px}
@@ -290,6 +368,106 @@ footer{background:var(--green);color:var(--paper)}
         </div>
       </div>
       <p class="board-note" id="board-note">Hver seldur pakki skilar 1.100 kr. í ferðasjóð iðkanda: 1.500 kr. söluverð að frádregnum 400 kr. kostnaði.</p>
+    </div>
+  </section>
+
+  <section id="svona" class="wrap how" aria-labelledby="svona-h">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Svona virkar þetta</div>
+        <h2 class="title cond" id="svona-h">Hver pakki gefur<br><span data-sjodur>1.100 kr.</span> í ferðasjóðinn</h2>
+      </div>
+      <div>
+        <p>Iðkandinn pantar pakka á kostnaðarverði og selur þá á <span data-verd2>1.500 kr.</span> Mismunurinn fer í ferðasjóðinn hennar. Því fleiri pakka sem hún selur, því meira safnar hún.</p>
+      </div>
+    </div>
+
+    <figure class="split">
+      <figcaption class="sr">Söluverð pakkans er <span data-verd2>1.500 kr.</span>: <span data-kostn>400 kr.</span> fara í prentun og pökkun og <span data-sjodur>1.100 kr.</span> í ferðasjóð iðkandans.</figcaption>
+      <div class="split-top" aria-hidden="true">
+        <div class="split-label cond">Söluverð pakkans · <span data-verd2>1.500 kr.</span></div>
+        <svg viewBox="0 0 1000 26" preserveAspectRatio="none"><path d="M2 24 V12 Q2 6 8 6 H490 Q500 6 500 0 Q500 6 510 6 H992 Q998 6 998 12 V24" fill="none" stroke="#1C1714" stroke-width="2.5" vector-effect="non-scaling-stroke"/></svg>
+      </div>
+      <div class="split-bar" aria-hidden="true">
+        <div class="seg seg-cost" id="seg-cost"><strong class="cond" data-kostn>400 kr.</strong><span>prentun og pökkun</span></div>
+        <div class="seg seg-fund" id="seg-fund"><div><strong class="cond" data-sjodur>1.100 kr.</strong><span>í ferðasjóð iðkandans</span></div><svg class="seg-icon" aria-hidden="true" width="92" height="76" viewBox="0 0 92 76" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="20" width="76" height="50" rx="9"></rect><path d="M32 20 V12 Q32 6 38 6 H54 Q60 6 60 12 V20"></path><path d="M26 20 V70 M66 20 V70"></path><circle cx="46" cy="44" r="8" fill="#FFFFFF" stroke="none"></circle><path d="M8 40 H18 M74 40 H84"></path></svg></div>
+      </div>
+      <div class="split-notes" aria-hidden="true">
+        <div class="note-cost" id="note-cost"><svg width="26" height="30" viewBox="0 0 26 30" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 28 C12 18 12 10 13 3"/><path d="M6 10 L13 3 L20 10"/></svg><span>lagt inn við pöntun</span></div>
+        <div class="note-fund" id="note-fund"><svg width="26" height="30" viewBox="0 0 26 30" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 28 C12 18 12 10 13 3"/><path d="M6 10 L13 3 L20 10"/></svg><span>iðkandinn heldur eftir þegar hún selur pakkann</span></div>
+      </div>
+    </figure>
+
+    <ol class="how-steps">
+      <li>
+        <div class="how-art" aria-hidden="true">
+          <div class="mini" style="left:6%;top:18px;transform:rotate(-10deg)"><div class="paper"><img src="assets/midar/midi-13.webp" alt="" loading="lazy"></div></div>
+          <div class="mini" style="left:30%;top:4px;transform:rotate(4deg)"><div class="paper"><img src="assets/midar/midi-07.webp" alt="" loading="lazy"></div></div>
+          <div class="mini" style="left:52%;top:26px;transform:rotate(12deg)"><div class="paper"><img src="assets/midar/midi-05.webp" alt="" loading="lazy"></div></div>
+          <div class="pill pill-g cond">þú leggur inn <span data-kostn>400 kr.</span></div>
+        </div>
+        <div class="step-head"><span class="n">1</span><h3 class="cond">Pantaðu</h3></div>
+        <p>Pantaðu pakka hér á síðunni og leggðu inn <span data-kostn>400 kr.</span> fyrir hvern pakka.</p>
+      </li>
+      <li>
+        <div class="how-art" aria-hidden="true">
+          <svg width="150" height="150" viewBox="0 0 150 150" fill="none" stroke="#1C1714" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="art-house"><path d="M30 70 L75 32 L120 70"></path><path d="M40 62 V128 H110 V62"></path><rect x="64" y="94" width="22" height="34" rx="2"></rect><rect x="48" y="74" width="16" height="14" rx="2"></rect><rect x="88" y="74" width="16" height="14" rx="2"></rect><path d="M98 44 V30 H108 V52"></path><path d="M24 128 H128"></path></svg>
+          <div class="mini" style="left:44%;top:8px;width:112px;transform:rotate(-6deg)"><div class="paper"><img src="assets/midar/midi-02.webp" alt="" loading="lazy"></div></div>
+          <div class="pill pill-r cond">þú selur á <span data-verd2>1.500 kr.</span></div>
+        </div>
+        <div class="step-head"><span class="n">2</span><h3 class="cond">Seldu</h3></div>
+        <p>Seldu pakkann á <span data-verd2>1.500 kr.</span> til fjölskyldu, vina og nágranna.</p>
+      </li>
+      <li>
+        <div class="how-art" aria-hidden="true">
+          <svg width="236" height="170" viewBox="0 0 236 170" fill="none" stroke-linecap="round" stroke-linejoin="round" class="art-ferry">
+            <path d="M2 148 Q14 141 26 148 T50 148 T74 148 T98 148 T122 148 T146 148" stroke="#3A7CA5" stroke-width="3"></path>
+            <path d="M10 160 Q22 153 34 160 T58 160 T82 160 T106 160 T130 160" stroke="#3A7CA5" stroke-width="2.4" opacity="0.7"></path>
+            <path d="M4 104 H152 L140 136 Q138 140 134 140 H22 Q18 140 16 136 Z" fill="#1D3557" stroke="#1C1714" stroke-width="2.6"></path>
+            <path d="M10 117 H148" stroke="#D4111A" stroke-width="4"></path>
+            <text x="78" y="133" text-anchor="middle" font-family="'Bricolage Grotesque', system-ui, sans-serif" font-size="11" font-weight="800" letter-spacing="1.5" fill="#FFFFFF" stroke="none">HERJÓLFUR</text>
+            <rect x="22" y="78" width="112" height="26" rx="5" fill="#FFFFFF" stroke="#1C1714" stroke-width="2.6"></rect>
+            <rect x="48" y="58" width="70" height="20" rx="5" fill="#FFFFFF" stroke="#1C1714" stroke-width="2.6"></rect>
+            <path d="M32 88 H40 M48 88 H56 M64 88 H72 M80 88 H88 M96 88 H104 M112 88 H120" stroke="#1C1714" stroke-width="4"></path>
+            <path d="M58 67 H108" stroke="#1D3557" stroke-width="6"></path>
+            <path d="M98 58 V42" stroke="#1C1714" stroke-width="2.4"></path>
+            <path d="M98 42 L112 46 L98 50" fill="#D4111A" stroke="#1C1714" stroke-width="1.8"></path>
+            <g transform="translate(140 30) rotate(-12 46 30)">
+              <path d="M6 40 C6 30 14 26 26 24 L44 19 C50 11 58 5 68 5 L78 5 C83 5 86 8 86 13 L86 44 C86 50 82 53 76 53 L14 53 C9 53 6 48 6 40 Z" fill="#FFFFFF" stroke="#1C1714" stroke-width="2.8"></path>
+              <path d="M22 41 C38 36 58 34 82 26" stroke="#D4111A" stroke-width="5"></path>
+              <path d="M32 26 L38 33 M40 22 L46 29 M48 18 L54 25" stroke="#1C1714" stroke-width="2.2"></path>
+              <path d="M6 47 H86" stroke="#1C1714" stroke-width="2.4"></path>
+              <rect x="14" y="53" width="7" height="8" rx="1.5" fill="#1C1714"></rect>
+              <rect x="30" y="53" width="7" height="8" rx="1.5" fill="#1C1714"></rect>
+              <rect x="58" y="53" width="7" height="8" rx="1.5" fill="#1C1714"></rect>
+              <rect x="74" y="53" width="7" height="8" rx="1.5" fill="#1C1714"></rect>
+            </g>
+          </svg>
+          <div class="pill pill-y cond"><span data-sjodur>1.100 kr.</span> í ferðasjóðinn</div>
+        </div>
+        <div class="step-head"><span class="n">3</span><h3 class="cond">Safnaðu</h3></div>
+        <p>Mismunurinn, <span data-sjodur>1.100 kr.</span> af hverjum pakka, fer í ferðasjóð iðkandans.</p>
+      </li>
+    </ol>
+
+    <div class="calc">
+      <div class="calc-q">
+        <div class="calc-k">Reiknaðu dæmið</div>
+        <div class="calc-row">
+          <span>Ef ég sel</span>
+          <div class="calc-step">
+            <button type="button" id="calc-minus" aria-label="Fækka pökkum"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"><path d="M5 12h14"/></svg></button>
+            <output id="calc-n" class="cond num" aria-live="polite">10</output>
+            <button type="button" id="calc-plus" class="plus" aria-label="Fjölga pökkum"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"><path d="M5 12h14M12 5v14"/></svg></button>
+          </div>
+          <span>pakka</span>
+        </div>
+      </div>
+      <div class="calc-out">
+        <div><span>Ég legg inn</span><strong class="cond num" id="calc-inn">4.000 kr.</strong></div>
+        <div><span>Ég sel fyrir</span><strong class="cond num" id="calc-selt">15.000 kr.</strong></div>
+        <div class="hl"><span>Í ferðasjóðinn</span><strong class="cond num" id="calc-sjodur">11.000 kr.</strong></div>
+      </div>
     </div>
   </section>
 
@@ -502,8 +680,11 @@ function renderStats() {
   document.querySelectorAll('[data-sjodur]').forEach((el) => { el.textContent = fmt(S.verd - S.kostnadur) + ' kr.'; });
   if (S.afhending) $('afhending').textContent = S.afhending;
   if (S.tengilidur) { $('tengilidur').hidden = false; $('tengilidur-a').textContent = S.tengilidur; $('tengilidur-a').href = 'mailto:' + S.tengilidur; }
+  ['seg-cost', 'note-cost'].forEach((id) => { $(id).style.flexGrow = S.kostnadur; });
+  ['seg-fund', 'note-fund'].forEach((id) => { $(id).style.flexGrow = S.verd - S.kostnadur; });
   renderCountdown();
   renderSummary();
+  renderCalc();
   if (!opid() && $('kvittun').hidden) { $('form').hidden = true; $('lokad').hidden = false; }
 }
 
@@ -532,6 +713,16 @@ function renderSummary() {
   $('minus').disabled = pakkar <= 1;
   $('plus').disabled = pakkar >= 50;
 }
+let calcN = 10;
+function renderCalc() {
+  $('calc-n').textContent = calcN;
+  $('calc-inn').textContent = fmt(calcN * S.kostnadur) + ' kr.';
+  $('calc-selt').textContent = fmt(calcN * S.verd) + ' kr.';
+  $('calc-sjodur').textContent = fmt(calcN * (S.verd - S.kostnadur)) + ' kr.';
+  $('calc-minus').disabled = calcN <= 1;
+}
+$('calc-minus').addEventListener('click', () => { calcN = Math.max(1, calcN - 1); renderCalc(); });
+$('calc-plus').addEventListener('click', () => { calcN = Math.min(99, calcN + 1); renderCalc(); });
 $('minus').addEventListener('click', () => { pakkar = Math.max(1, pakkar - 1); renderSummary(); });
 $('plus').addEventListener('click', () => { pakkar = Math.min(50, pakkar + 1); renderSummary(); });
 
